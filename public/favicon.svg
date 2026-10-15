@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Flag Quizz</title>
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="#F5B1C5" stroke="#5B5486" stroke-width="4"/>
+  <path d="M21 12v42" stroke="#5B5486" stroke-width="5" stroke-linecap="round"/>
+  <path d="M24 14h28c-3 4-3 8 0 12H24z" fill="#19709A"/>
+  <path d="M24 26h28c-3 4-3 8 0 12H24z" fill="#FFFFFF"/>
+  <path d="M24 38h28c-3 4-3 8 0 12H24z" fill="#B8355A"/>
+  <path d="M24 14h28c-3 4-3 8 0 12c-3 4-3 8 0 12c-3 4-3 8 0 12H24z" fill="none" stroke="#5B5486" stroke-width="3" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,18 @@
+.app-answer-options {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+.app-options {
+  display: grid;
+  gap: var(--space-3);
+}
+/* Les noms longs (« Saint-Vincent-et-les-Grenadines ») passent à la ligne plutôt que de déborder. */
+.app-answer-options .app-option {
+  height: auto;
+  min-height: 52px;
+  padding-block: var(--space-2);
+  font-size: 16px;
+  white-space: normal;
+  text-align: center;
+}

@@ -1,0 +1,57 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-height: 100dvh;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+}
+.app-title {
+  margin: 0;
+  font: 400 24px/30px var(--font-display);
+  color: var(--ink);
+}
+.app-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.app-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.app-play {
+  display: grid;
+  gap: var(--space-6);
+  align-items: start;
+}
+/* Le pied de page reste en bas de l'écran : anecdote à gauche, carte à droite. */
+.app-bottom {
+  display: grid;
+  animation: fd-fade var(--duration-base) var(--ease-kaze);
+  gap: var(--space-6);
+  margin-top: auto;
+  align-items: start;
+}
+@media (min-width: 48rem) {
+  .app {
+    padding: var(--space-8);
+  }
+  .app-play,
+  .app-bottom {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

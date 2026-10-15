@@ -1,0 +1,41 @@
+<div class="app-options" role="group" aria-label="Choisis le pays de ce drapeau">
+  @for (option of quiz.question().options; track option.code) {
+    @let state = states()[option.code];
+    <button
+      #option
+      fdButton
+      block
+      class="app-option"
+      [variant]="state === 'correct' ? 'success' : state === 'wrong' ? 'danger' : 'secondary'"
+      [attr.aria-disabled]="state === 'dimmed' ? 'true' : null"
+      (click)="choose(option.code)"
+    >
+      @if (state === 'correct') {
+        <svg fdIcon="check"></svg>
+      } @else if (state === 'wrong') {
+        <svg fdIcon="close"></svg>
+      }
+      {{ name(option.code) }}
+      @if (state === 'correct') {
+        <span class="fd-sr">, bonne réponse</span>
+      } @else if (state === 'wrong') {
+        <span class="fd-sr">, ta réponse, incorrecte</span>
+      }
+    </button>
+  }
+</div>
+
+<!-- Le verdict n'a pas d'encart : la couleur et l'icône des boutons le montrent, ce texte l'annonce. -->
+<p class="fd-sr app-status" aria-live="polite">
+  @if (quiz.isAnswered()) {
+    {{ quiz.isCorrect() ? 'Bonne réponse' : 'Mauvaise réponse. La bonne réponse était' }} :
+    {{ name(quiz.question().country.code) }}.
+  }
+</p>
+
+@if (quiz.isAnswered()) {
+  <button #nextBtn fdButton size="lg" block (click)="next()">
+    Drapeau suivant
+    <svg fdIcon="chevron-right"></svg>
+  </button>
+}

@@ -1,0 +1,11 @@
+<div fdCard>
+  <span slot="title">Où se trouve ce pays ?</span>
+  <span slot="meta">{{ name() }}</span>
+  <iframe
+    class="app-map"
+    [src]="src()"
+    [title]="'Carte Google Maps : ' + name()"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
