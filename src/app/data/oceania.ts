@@ -1,72 +1,102 @@
-import { Country } from './country';
+import { Place } from './place';
 
-export const OCEANIA: readonly Country[] = [
+export const OCEANIA: readonly Place[] = [
   {
     code: 'au',
+    capital: 'Canberra',
+    landmark: 'Parlement d’Australie',
     funFact:
-      'La grande étoile à sept branches représente les six États et les territoires. Les cinq étoiles à droite forment la Croix du Sud. Le drapeau voisin néo-zélandais a quatre étoiles rouges.',
+      'Elle a été créée de toutes pièces comme compromis entre Sydney et Melbourne, qui se disputaient le titre. Elle a été dessinée par l’architecte américain Walter Burley Griffin.',
   },
   {
     code: 'fj',
+    capital: 'Suva',
+    landmark: 'Suva',
     funFact:
-      'Le blason montre un lion, des cannes à sucre, un cocotier, des bananes et une colombe. Fidji est un archipel d’environ 330 îles.',
+      'Suva est l’une des plus grandes villes des îles du Pacifique. Elle se trouve sur la côte humide de Viti Levu, où il pleut beaucoup.',
   },
   {
     code: 'ki',
+    capital: 'Tarawa-Sud',
+    landmark: 'Tarawa',
     funFact:
-      'La frégate est un oiseau de mer. Les trois bandes ondulées représentent les trois groupes d’îles : Gilbert, Phénix et Line.',
+      'Elle se trouve sur l’atoll de Tarawa, où les armées américaine et japonaise se sont affrontées en novembre 1943.',
   },
   {
     code: 'mh',
+    capital: 'Majuro',
+    landmark: 'Majuro',
     funFact:
-      'Les 24 branches rappellent les 24 municipalités. Les deux diagonales évoquent les deux chaînes d’îles, Ratak et Ralik.',
+      'Majuro est un atoll : la bande de terre qui porte la ville mesure souvent à peine quelques dizaines de mètres de large.',
   },
   {
     code: 'fm',
-    funFact: 'Les quatre étoiles représentent les quatre États : Chuuk, Kosrae, Pohnpei et Yap.',
+    capital: 'Palikir',
+    landmark: 'Nan Madol',
+    funFact:
+      'Elle se trouve sur l’île de Pohnpei, où les ruines de Nan Madol, une cité de pierre de basalte bâtie sur des îlots, sont classées à l’Unesco.',
   },
   {
     code: 'nr',
+    capital: 'Yaren',
+    landmark: 'Yaren',
     funFact:
-      'La bande jaune est l’équateur, tout près de l’île, et l’étoile à douze branches rappelle les douze tribus. Elle est placée sous la ligne, car l’île se trouve juste au sud de l’équateur.',
+      'Le pays n’a pas de capitale officielle. Yaren, où se trouve le Parlement, en fait office.',
   },
   {
     code: 'nz',
+    capital: 'Wellington',
+    landmark: 'Beehive',
     funFact:
-      'Les quatre étoiles forment la Croix du Sud. En 2015-2016, un référendum a proposé de changer le drapeau. Les Néo-Zélandais ont choisi de le garder.',
+      'C’est la capitale la plus au sud du monde. Son parlement a la forme d’une ruche, d’où son surnom de « Beehive ».',
   },
   {
     code: 'pw',
+    capital: 'Ngerulmud',
+    landmark: 'Ngerulmud',
     funFact:
-      'Le disque est la pleine lune. Il est décalé, et non centré comme sur le drapeau japonais, car c’est la lune et non le soleil.',
+      'Elle a remplacé Koror en 2006 et compte à peine quelques centaines d’habitants : c’est l’une des capitales les moins peuplées du monde.',
   },
   {
     code: 'pg',
+    capital: 'Port Moresby',
+    landmark: 'Parlement de Papouasie-Nouvelle-Guinée',
     funFact:
-      'L’oiseau est un oiseau de paradis. Le drapeau a été dessiné en 1971 par Susan Karike, alors âgée de 15 ans.',
+      'Son nom vient du capitaine britannique John Moresby. Le pays compte plus de 800 langues, l’un des chiffres les plus élevés du monde.',
   },
   {
     code: 'ws',
+    capital: 'Apia',
+    landmark: 'Vailima',
     funFact:
-      'Les cinq étoiles représentent la Croix du Sud. Le bleu évoque la liberté, le rouge le courage et le blanc la pureté.',
+      'L’écrivain Robert Louis Stevenson s’est installé près d’Apia à la fin de sa vie. Il est enterré sur le mont Vaea, qui domine la ville.',
   },
   {
     code: 'sb',
-    funFact: 'Les cinq étoiles représentent les cinq groupes d’îles principaux du pays.',
+    capital: 'Honiara',
+    landmark: 'Honiara',
+    funFact:
+      'Elle se trouve sur l’île de Guadalcanal, où Américains et Japonais se sont livré une grande bataille en 1942 et 1943.',
   },
   {
     code: 'to',
+    capital: 'Nukuʻalofa',
+    landmark: 'Palais royal de Nukuʻalofa',
     funFact:
-      'Adopté en 1875, il est inscrit dans la constitution : on ne peut pas le modifier. La croix rouge évoque le christianisme.',
+      'Tonga est le seul royaume souverain du Pacifique. Son palais royal, tout en bois, date de 1867.',
   },
   {
     code: 'tv',
+    capital: 'Funafuti',
+    landmark: 'Funafuti',
     funFact:
-      'Les neuf étoiles représentent les neuf îles de l’archipel. Leur disposition reproduit la carte du pays.',
+      'Le pays tire une partie de ses revenus de son suffixe internet « .tv ». L’atoll est menacé par la montée de l’océan.',
   },
   {
     code: 'vu',
+    capital: 'Port-Vila',
+    landmark: 'Port-Vila',
     funFact:
-      'Le « Y » évoque la disposition des îles. L’emblème est une défense de sanglier entourée de feuilles de namele, symbole de prospérité.',
+      'Le pays a trois langues officielles : le bichelamar, le français et l’anglais, héritage de la gestion commune franco-britannique.',
   },
 ];

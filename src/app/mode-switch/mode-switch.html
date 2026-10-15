@@ -1,0 +1,14 @@
+<div class="app-mode-buttons" role="group" aria-label="Mode de jeu">
+  @for (option of modes; track option.value) {
+    <button
+      fdButton
+      size="sm"
+      class="app-mode-button"
+      [variant]="mode() === option.value ? 'primary' : 'secondary'"
+      [attr.aria-pressed]="mode() === option.value"
+      (click)="modeChange.emit(option.value)"
+    >
+      {{ option.label }}
+    </button>
+  }
+</div>

@@ -1,5 +1,5 @@
 <header class="app-header">
-  <h1 class="app-title">Flag Quizz</h1>
+  <h1 class="app-title">Capital Quizz</h1>
   <ul class="app-stats" aria-label="Ton score">
     <li>
       <fd-badge tone="sakura" soft>Score {{ quiz.score() }} / {{ quiz.asked() }}</fd-badge>
@@ -11,20 +11,29 @@
       <fd-badge>Record {{ quiz.bestStreak() }}</fd-badge>
     </li>
   </ul>
-  <fd-switch [checked]="isDark()" (checkedChange)="setDark($event)">Thème nuit</fd-switch>
+  <div class="app-controls">
+    <app-mode-switch [mode]="quiz.mode()" (modeChange)="setMode($event)" />
+    <fd-switch [checked]="isDark()" (checkedChange)="setDark($event)">Thème nuit</fd-switch>
+  </div>
 </header>
 
 <main class="app-main">
   <section class="app-play">
-    <app-flag-card [country]="quiz.question().country" [revealed]="quiz.isAnswered()" />
+    <app-place-card
+      [place]="quiz.question().place"
+      [mode]="quiz.mode()"
+      [revealed]="quiz.isAnswered()"
+    />
     <app-answer-options />
   </section>
 
   <!-- Rien ne s'affiche avant la réponse : l'anecdote et la carte donneraient la solution. -->
   @if (quiz.isAnswered()) {
     <div class="app-bottom">
-      <app-fun-fact [country]="quiz.question().country" />
-      <app-map-panel [country]="quiz.question().country" />
+      <app-fun-fact [place]="quiz.question().place" [mode]="quiz.mode()" />
+      <app-map-panel [place]="quiz.question().place" [mode]="quiz.mode()" />
     </div>
   }
 </main>
+
+<app-site-footer />

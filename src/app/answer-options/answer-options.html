@@ -1,4 +1,4 @@
-<div class="app-options" role="group" aria-label="Choisis le pays de ce drapeau">
+<div class="app-options" role="group" [attr.aria-label]="groupLabel()">
   @for (option of quiz.question().options; track option.code) {
     @let state = states()[option.code];
     <button
@@ -29,13 +29,13 @@
 <p class="fd-sr app-status" aria-live="polite">
   @if (quiz.isAnswered()) {
     {{ quiz.isCorrect() ? 'Bonne réponse' : 'Mauvaise réponse. La bonne réponse était' }} :
-    {{ name(quiz.question().country.code) }}.
+    {{ name(quiz.question().place.code) }}.
   }
 </p>
 
 @if (quiz.isAnswered()) {
   <button #nextBtn fdButton size="lg" block (click)="next()">
-    Drapeau suivant
+    Capitale suivante
     <svg fdIcon="chevron-right"></svg>
   </button>
 }

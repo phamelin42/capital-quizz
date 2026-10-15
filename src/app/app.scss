@@ -19,6 +19,12 @@
   font: 400 24px/30px var(--font-display);
   color: var(--ink);
 }
+.app-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-6);
+}
 .app-stats {
   display: flex;
   flex-wrap: wrap;

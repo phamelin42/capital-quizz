@@ -1,242 +1,340 @@
-import { Country } from './country';
+import { Place } from './place';
 
-export const ASIA: readonly Country[] = [
+export const ASIA: readonly Place[] = [
   {
     code: 'af',
+    capital: 'Kaboul',
+    landmark: 'Jardins de Babur',
     funFact:
-      'C’est le drapeau de la République, remplacé en 2021 par le drapeau blanc des talibans. L’Afghanistan est l’un des pays qui ont le plus souvent changé de drapeau au XXe siècle.',
+      'La ville est entourée de montagnes et située à environ 1 800 mètres d’altitude. Les jardins de Babur abritent la tombe du premier empereur moghol.',
   },
   {
     code: 'am',
+    capital: 'Erevan',
+    landmark: 'Cascade d’Erevan',
     funFact:
-      'Selon l’interprétation courante, le rouge évoque le sang versé, le bleu le ciel et l’orange la terre fertile et le travail des Arméniens.',
+      'Fondée en 782 avant notre ère, la forteresse d’Erebouni est plus ancienne que Rome. La ville s’étend face au mont Ararat.',
   },
   {
     code: 'az',
+    capital: 'Bakou',
+    landmark: 'Tours de la Flamme',
     funFact:
-      'Le bleu rappelle l’héritage turcophone, le rouge la modernité et le vert l’islam. Selon l’interprétation courante, l’étoile à huit branches évoque les peuples turcs.',
+      'Les Tours de la Flamme, hautes de 190 mètres, évoquent le feu : l’Azerbaïdjan est surnommé « le pays du feu » à cause de ses gisements d’hydrocarbures.',
   },
   {
     code: 'bh',
+    capital: 'Manama',
+    landmark: 'Bahrain World Trade Center',
     funFact:
-      'Les cinq pointes représentent les cinq piliers de l’islam. Le drapeau du Qatar lui ressemble, mais avec neuf pointes et un grenat.',
+      'Les deux tours du Bahrain World Trade Center portent trois éoliennes entre elles : ce furent les premiers gratte-ciel du monde conçus avec des éoliennes intégrées.',
   },
   {
     code: 'bd',
+    capital: 'Dacca',
+    landmark: 'Jatiya Sangsad Bhaban',
     funFact:
-      'Le disque est volontairement placé un peu vers la hampe : quand le drapeau flotte, il paraît ainsi centré. Le rouge évoque le soleil levant et le sang de l’indépendance.',
+      'Surnommée « la ville des rickshaws », elle compte des centaines de milliers de ces tricycles décorés de peintures colorées. Le Parlement a été dessiné par l’architecte américain Louis Kahn.',
   },
   {
     code: 'bt',
+    capital: 'Thimphou',
+    landmark: 'Trashi Chhoe Dzong',
     funFact:
-      'Le dragon représente le Druk, le dragon-tonnerre qui a donné son nom au pays. Le Bhoutan s’appelle Druk Yul, « le pays du dragon ».',
+      'C’est l’une des rares capitales du monde sans feux de circulation : un agent de la circulation en gants blancs règle le carrefour principal.',
   },
   {
     code: 'bn',
+    capital: 'Bandar Seri Begawan',
+    landmark: 'Mosquée Omar Ali Saifuddien',
     funFact:
-      'Le jaune est la couleur du sultan. L’emblème rouge montre un croissant, une ombrelle, des ailes et deux mains levées.',
+      'À côté de la mosquée se trouve Kampong Ayer, un village sur pilotis où vivent des milliers d’habitants, souvent appelé la « Venise de l’Orient ».',
   },
   {
     code: 'kh',
-    funFact: 'C’est le seul drapeau national à représenter un bâtiment : le temple d’Angkor Vat.',
+    capital: 'Phnom Penh',
+    landmark: 'Palais royal de Phnom Penh',
+    funFact:
+      'La ville se trouve à la confluence du Mékong et du Tonlé Sap. Ce fleuve inverse son sens d’écoulement chaque année pendant la saison des pluies.',
   },
   {
     code: 'cn',
+    capital: 'Pékin',
+    landmark: 'Cité interdite',
     funFact:
-      'Dessiné en 1949 par Zeng Liansong lors d’un concours, il montre la grande étoile du Parti communiste et quatre petites étoiles pour les classes sociales.',
+      'La Cité interdite compte près de 1 000 bâtiments. Vingt-quatre empereurs des dynasties Ming et Qing y ont vécu pendant cinq siècles.',
   },
   {
     code: 'cy',
+    capital: 'Nicosie',
+    landmark: 'Porte de Famagouste',
     funFact:
-      'Le cuivre rappelle l’antique réputation de l’île, dont le nom grec, Kypros, est à l’origine du mot « cuivre ». Les rameaux d’olivier symbolisent la paix entre les deux communautés.',
+      'C’est la dernière capitale européenne encore coupée en deux par une zone tampon, la « ligne verte », qui la traverse depuis 1974.',
   },
   {
     code: 'ge',
+    capital: 'Tbilissi',
+    landmark: 'Pont de la Paix',
     funFact:
-      'Cette croix dite « des cinq croix » est médiévale. Le drapeau a été rétabli en 2004 à la suite de la révolution des Roses.',
+      'Son nom vient d’un mot géorgien signifiant « chaud » : des sources thermales sulfureuses jaillissent au pied de la vieille ville.',
   },
   {
     code: 'in',
+    capital: 'New Delhi',
+    landmark: 'Porte de l’Inde',
     funFact:
-      'La roue est le chakra d’Ashoka, empereur du IIIe siècle av. J.-C. Elle a remplacé en 1947 le rouet de Gandhi du drapeau du Congrès.',
+      'Inaugurée en 1931, la ville a été dessinée par les architectes britanniques Edwin Lutyens et Herbert Baker. La Porte de l’Inde honore les soldats morts pendant la Première Guerre mondiale.',
   },
   {
     code: 'id',
+    capital: 'Jakarta',
+    landmark: 'Monument national (Jakarta)',
     funFact:
-      'On l’appelle Merah Putih, « rouge et blanc ». Ces couleurs remontent à l’empire Majapahit, au XIIIe siècle.',
+      'La ville s’enfonce dans le sol de plusieurs centimètres par an : le gouvernement a décidé de bâtir une nouvelle capitale, Nusantara, sur l’île de Bornéo.',
   },
   {
     code: 'ir',
+    capital: 'Téhéran',
+    landmark: 'Tour Azadi',
     funFact:
-      'L’inscription « Allah est le plus grand » est répétée 22 fois, 11 fois sur la bande verte et 11 sur la rouge, pour la date de la révolution de 1979 (22 Bahman).',
+      'Au pied des monts Alborz, elle est dominée par le mont Tochal, où l’on skie l’hiver à moins d’une heure du centre-ville.',
   },
   {
     code: 'iq',
+    capital: 'Bagdad',
+    landmark: 'Mosquée Al-Kadhimiya',
     funFact:
-      'L’inscription « Allah est le plus grand » est ajoutée en 1991, d’abord de la main de Saddam Hussein, puis réécrite en caractères coufiques en 2008.',
+      'Fondée en 762 par le calife al-Mansur, elle fut au IXe siècle un grand centre du savoir avec la « Maison de la Sagesse ».',
   },
   {
     code: 'il',
-    funFact: 'Le dessin s’inspire du tallit, le châle de prière juif, blanc à rayures bleues.',
+    capital: 'Jérusalem',
+    landmark: 'Dôme du Rocher',
+    funFact:
+      'Sa vieille ville abrite des lieux saints du judaïsme, du christianisme et de l’islam, à quelques centaines de mètres les uns des autres. Son statut est contesté et de nombreux États ont leur ambassade à Tel-Aviv.',
   },
   {
     code: 'jp',
+    capital: 'Tokyo',
+    landmark: 'Tokyo Skytree',
     funFact:
-      'Le Hinomaru, « le cercle du soleil », est utilisé depuis des siècles, mais n’a été fixé par la loi qu’en 1999.',
+      'Appelée Edo jusqu’en 1868, elle a été rebaptisée Tokyo (« capitale de l’Est »). L’empereur Meiji s’y est installé l’année suivante. C’est aujourd’hui l’une des plus grandes agglomérations du monde.',
   },
   {
     code: 'jo',
+    capital: 'Amman',
+    landmark: 'Citadelle d’Amman',
     funFact:
-      'Le drapeau dérive de la Grande Révolte arabe de 1916. Les sept branches de l’étoile évoquent les sept versets de la première sourate du Coran.',
+      'La ville est bâtie sur des collines. Son théâtre romain du IIe siècle pouvait accueillir environ 6 000 spectateurs.',
   },
   {
     code: 'kz',
+    capital: 'Astana',
+    landmark: 'Tour Baïterek',
     funFact:
-      'Le bleu ciel est la couleur des peuples turcs. Le soleil et l’aigle des steppes évoquent la liberté, et l’ornement est un motif traditionnel kazakh.',
+      'Choisie comme capitale en 1997, elle a été bâtie dans la steppe et change de nom plusieurs fois : Aqmola, Astana, Noursoultan, puis Astana de nouveau en 2022.',
   },
   {
     code: 'kw',
+    capital: 'Koweït',
+    landmark: 'Tours du Koweït',
     funFact:
-      'Les couleurs viennent d’un vers du poète Safi al-Din al-Hilli : « Blanches nos actions, noires nos batailles, vertes nos terres, rouges nos épées ».',
+      'Les Tours du Koweït, inaugurées en 1979, sont un château d’eau : leurs sphères stockent de l’eau potable pour la ville.',
   },
   {
     code: 'kg',
+    capital: 'Bichkek',
+    landmark: 'Place Ala-Too',
     funFact:
-      'Les 40 rayons du soleil rappellent les 40 tribus du héros Manas. Le centre figure le toit de la yourte (tunduk).',
+      'Dominée par les sommets enneigés du Tian Shan, c’est une ville très verte, dont les larges avenues sont bordées d’arbres.',
   },
   {
     code: 'la',
+    capital: 'Vientiane',
+    landmark: 'That Luang',
     funFact:
-      'Le disque blanc évoque la lune qui se reflète sur le Mékong, ou l’unité du peuple lao sous l’autorité de l’État.',
+      'C’est l’une des capitales les plus calmes d’Asie. Le That Luang, stupa doré, est le symbole du pays et figure sur ses armoiries.',
   },
   {
     code: 'lb',
+    capital: 'Beyrouth',
+    landmark: 'Rocher de la Grotte aux Pigeons',
     funFact:
-      'Le cèdre est un symbole biblique de la sagesse, de la force et de l’éternité. Il est cité à plusieurs reprises dans la Bible.',
+      'La ville a été reconstruite de nombreuses fois après des séismes, des guerres et des incendies : les archéologues y ont mis au jour des couches de peuplement depuis plus de 5 000 ans.',
   },
   {
     code: 'my',
+    capital: 'Kuala Lumpur',
+    landmark: 'Tours Petronas',
     funFact:
-      'Il ressemble au drapeau américain. Les 14 bandes et les 14 branches de l’étoile représentent les 13 États et le territoire fédéral.',
+      'Son nom signifie « confluent boueux ». Les tours Petronas, hautes de 452 mètres, ont été les plus hautes du monde de 1998 à 2004.',
   },
   {
     code: 'mv',
+    capital: 'Malé',
+    landmark: 'Grande Mosquée du Vendredi de Malé',
     funFact:
-      'Le rouge rend hommage aux héros de l’indépendance, le vert à la paix et à la prospérité, le croissant blanc à l’islam.',
+      'La ville couvre toute une petite île d’environ 8 km² : c’est l’une des capitales les plus densément peuplées du monde.',
   },
   {
     code: 'mn',
+    capital: 'Oulan-Bator',
+    landmark: 'Monastère de Gandan',
     funFact:
-      'Le soyombo est un symbole mongol rassemblant le feu, le soleil, la lune et le yin-yang. Il est utilisé depuis le XVIIe siècle.',
+      'C’est la capitale la plus froide du monde : la température moyenne annuelle y est proche de 0 °C, et elle abrite près de la moitié de la population du pays.',
   },
   {
     code: 'mm',
+    capital: 'Naypyidaw',
+    landmark: 'Pagode Uppatasanti',
     funFact:
-      'Ce drapeau a remplacé en 2010 celui de 1974. Le jaune évoque la solidarité, le vert la paix et le rouge le courage.',
+      'Le gouvernement y a emménagé en 2005 : c’est une capitale construite de toutes pièces, avec des avenues très larges et peu de circulation.',
   },
   {
     code: 'np',
+    capital: 'Katmandou',
+    landmark: 'Swayambhunath',
     funFact:
-      'C’est le seul drapeau national qui ne soit pas rectangulaire. Ses deux pointes évoquent l’Himalaya et les deux religions principales.',
+      'La place Durbar et d’autres monuments de la vallée sont classés à l’Unesco. Le stupa de Swayambhunath est surnommé « le temple des singes ».',
   },
   {
     code: 'kp',
+    capital: 'Pyongyang',
+    landmark: 'Tour du Juche',
     funFact:
-      'L’étoile rouge symbolise le socialisme révolutionnaire. Le disque et l’étoile sont décalés vers la hampe pour paraître centrés.',
+      'La tour du Juche, haute de 170 mètres, est le monument en pierre le plus haut du monde. Elle a été achevée en 1982.',
   },
   {
     code: 'om',
+    capital: 'Mascate',
+    landmark: 'Grande mosquée du sultan Qabous',
     funFact:
-      'L’emblème montre un khanjar, le poignard traditionnel omanais, sur deux sabres croisés.',
+      'La Grande mosquée abrite un tapis noué à la main de plus de 4 000 m² et l’un des plus grands lustres du monde.',
   },
   {
     code: 'pk',
+    capital: 'Islamabad',
+    landmark: 'Mosquée Faisal',
     funFact:
-      'Le vert représente la majorité musulmane, la bande blanche les minorités religieuses. Le drapeau dérive de celui de la Ligue musulmane.',
+      'Planifiée dans les années 1960 pour remplacer Karachi, c’est une ville nouvelle, au pied des collines de Margalla.',
   },
   {
     code: 'ph',
+    capital: 'Manille',
+    landmark: 'Intramuros',
     funFact:
-      'C’est le seul drapeau national qui se retourne en temps de guerre : le rouge est alors placé au-dessus. Les huit rayons du soleil évoquent les huit premières provinces insurgées.',
+      'Le quartier fortifié d’Intramuros fut le centre de la colonisation espagnole. Manille est la ville la plus densément peuplée du monde.',
   },
   {
     code: 'qa',
+    capital: 'Doha',
+    landmark: 'Musée d’art islamique de Doha',
     funFact:
-      'Le grenat, appelé « marron du Qatar », viendrait d’un rouge qui virait au brun sous le soleil lors de la teinture. Il a donné lieu à une couleur normalisée.',
+      'Le Qatar y a organisé la Coupe du monde de football de 2022, la première jouée dans un pays arabe.',
   },
   {
     code: 'sa',
+    capital: 'Riyad',
+    landmark: 'Kingdom Centre',
     funFact:
-      'L’inscription est la chahada, la profession de foi musulmane. Pour cette raison, le drapeau n’est jamais mis en berne ni utilisé comme décor.',
+      'Son nom signifie « les jardins » en arabe. Le Kingdom Centre est percé d’une ouverture en forme d’arche, à 300 mètres de haut.',
   },
   {
     code: 'sg',
+    capital: 'Singapour',
+    landmark: 'Marina Bay Sands',
     funFact:
-      'Les cinq étoiles représentent la démocratie, la paix, le progrès, la justice et l’égalité.',
+      'Cité-État de l’Asie du Sud-Est, elle est surnommée « la ville dans un jardin ». Les « Supertrees » des Gardens by the Bay sont des arbres artificiels hauts de 25 à 50 mètres.',
   },
   {
     code: 'kr',
+    capital: 'Séoul',
+    landmark: 'Palais Gyeongbokgung',
     funFact:
-      'Les trigrammes représentent le ciel, la terre, le feu et l’eau. Le taegeuk illustre l’harmonie du yin et du yang.',
+      'Le palais Gyeongbokgung, fondé en 1395, est le plus grand des cinq palais royaux de la ville. Une cérémonie de relève de la garde y est reconstituée plusieurs fois par jour.',
   },
   {
     code: 'lk',
+    capital: 'Colombo',
+    landmark: 'Gangaramaya',
     funFact:
-      'Le lion tenant une épée provient du drapeau du royaume de Kandy. Les quatre feuilles de figuier sacré (bodhi) aux coins évoquent les vertus bouddhiques.',
+      'Colombo est la capitale commerciale. La capitale législative est Sri Jayawardenepura Kotte, une banlieue de Colombo.',
   },
   {
     code: 'sy',
+    capital: 'Damas',
+    landmark: 'Mosquée des Omeyyades',
     funFact:
-      'Ce drapeau, celui de l’indépendance, avait été repris par l’opposition dès 2011. Les nouvelles autorités l’ont adopté après la chute de Bachar el-Assad, en décembre 2024.',
+      'Elle compte parmi les plus anciennes villes du monde habitées sans interruption. Sa vieille ville est classée à l’Unesco depuis 1979.',
   },
   {
     code: 'tj',
+    capital: 'Douchanbé',
+    landmark: 'Palais de la Nation',
     funFact:
-      'Le sept est un nombre symbolique d’harmonie dans la culture tadjike, la couronne évoque l’unité du peuple.',
+      'Son nom signifie « lundi » en tadjik : elle est née d’un village où se tenait le marché de ce jour de la semaine.',
   },
   {
     code: 'th',
+    capital: 'Bangkok',
+    landmark: 'Wat Arun',
     funFact:
-      'Le bleu a été ajouté en 1917 par le roi Vajiravudh, en signe de solidarité avec les Alliés pendant la Première Guerre mondiale.',
+      'Le nom officiel de Bangkok est l’un des plus longs du monde pour une ville, avec plus de cent lettres. Les Thaïlandais l’appellent simplement Krung Thep, « la ville des anges ».',
   },
   {
     code: 'tl',
+    capital: 'Dili',
+    landmark: 'Statue du Christ Roi de Dili',
     funFact:
-      'L’étoile blanche est appelée « la lumière qui guide ». Le noir évoque l’obscurité à surmonter et le jaune l’héritage colonial.',
+      'La statue du Christ Roi, haute de 27 mètres, surplombe la baie de Dili. Elle a été offerte par l’Indonésie en 1996.',
   },
   {
     code: 'tr',
+    capital: 'Ankara',
+    landmark: 'Mausolée d’Atatürk',
     funFact:
-      'Selon la légende, le croissant et l’étoile se seraient reflétés dans le sang des soldats après une bataille, et le drapeau aurait pris la forme de ce reflet.',
+      'Mustafa Kemal Atatürk en a fait la capitale en 1923, à la place d’Istanbul, au moment de la fondation de la République.',
   },
   {
     code: 'tm',
+    capital: 'Achgabat',
+    landmark: 'Monument de l’Indépendance',
     funFact:
-      'Les cinq motifs sont les guls, motifs de tapis traditionnels des cinq grandes tribus. C’est l’un des drapeaux les plus complexes du monde.',
+      'Ses immeubles de marbre blanc ont valu à la ville un record Guinness : celui de la plus forte densité de bâtiments revêtus de marbre blanc.',
   },
   {
     code: 'ae',
+    capital: 'Abou Dhabi',
+    landmark: 'Grande Mosquée Cheikh Zayed',
     funFact:
-      'Il porte les couleurs panarabes. Il a été conçu en 1971 par Abdullah Mohammed Al Maainah, alors âgé de 19 ans.',
+      'La Grande Mosquée Cheikh Zayed possède 82 coupoles. Elle abrite l’un des plus grands tapis noués à la main du monde.',
   },
   {
     code: 'uz',
+    capital: 'Tachkent',
+    landmark: 'Place de l’Indépendance',
     funFact:
-      'Les douze étoiles représentent les douze mois de l’année, ou les anciennes provinces du pays.',
+      'Détruite par un séisme en 1966, la ville a été reconstruite avec l’aide de toute l’Union soviétique. Son métro compte des stations décorées comme des palais.',
   },
   {
     code: 'vn',
+    capital: 'Hanoï',
+    landmark: 'Temple de la Littérature',
     funFact:
-      'Les cinq branches de l’étoile représentent les ouvriers, les paysans, les soldats, les intellectuels et la jeunesse. Le drapeau remonte à 1940.',
+      'Le Temple de la Littérature, fondé en 1070, abrite la première université du pays. Hanoï signifie « la ville entre les fleuves ».',
   },
   {
     code: 'ye',
+    capital: 'Sanaa',
+    landmark: 'Vieille ville de Sanaa',
     funFact:
-      'Il porte les couleurs panarabes. Il est devenu le drapeau de tout le pays à l’unification du Nord et du Sud en 1990.',
+      'Sa vieille ville, classée à l’Unesco, est célèbre pour ses maisons-tours de plusieurs étages en briques ornées de motifs blancs.',
   },
   {
     code: 'ps',
+    capital: 'Ramallah',
+    landmark: 'Place Al-Manara',
     funFact:
-      'Il reprend les couleurs de la Grande Révolte arabe de 1916 et est devenu en 1964 celui de l’Organisation de libération de la Palestine.',
+      'Ramallah est le siège de l’Autorité palestinienne. L’État de Palestine proclame Jérusalem-Est pour capitale.',
   },
 ];

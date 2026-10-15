@@ -1,271 +1,381 @@
-import { Country } from './country';
+import { Place } from './place';
 
-export const AFRICA: readonly Country[] = [
+export const AFRICA: readonly Place[] = [
   {
     code: 'dz',
+    capital: 'Alger',
+    landmark: 'Casbah d’Alger',
     funFact:
-      'Le croissant et l’étoile sont rouges, la couleur du sang versé pendant la guerre d’indépendance. Le drapeau a été adopté en 1962.',
+      'Surnommée « Alger la Blanche » pour ses façades claires étagées face à la mer, elle a sa Casbah classée à l’Unesco depuis 1992.',
   },
   {
     code: 'ao',
+    capital: 'Luanda',
+    landmark: 'Forteresse de Saint-Michel de Luanda',
     funFact:
-      'L’engrenage et la machette rappellent la faucille et le marteau : ils représentent les ouvriers et les paysans. Le dessin est celui du mouvement MPLA.',
+      'Elle a été fondée en 1576 par le navigateur portugais Paulo Dias de Novais, sur une baie de l’océan Atlantique.',
   },
   {
     code: 'bj',
+    capital: 'Porto-Novo',
+    landmark: 'Palais royal de Porto-Novo',
     funFact:
-      'Ce sont les couleurs panafricaines. Le Bénin a repris ce drapeau en 1990, après quinze ans de drapeau vert à étoile rouge sous le régime marxiste.',
+      'Porto-Novo est la capitale officielle. Le gouvernement siège à Cotonou, la plus grande ville du pays.',
   },
   {
     code: 'bw',
+    capital: 'Gaborone',
+    landmark: 'Monument des Trois Dikgosi',
     funFact:
-      'Le bleu évoque l’eau et la pluie, rare dans le pays : le mot « pula » veut dire « pluie » et sert aussi de devise nationale et de monnaie. Le noir et le blanc symbolisent l’harmonie entre les peuples.',
+      'Elle porte le nom du chef Gaborone. Elle a été choisie comme capitale peu avant l’indépendance du pays, en 1966.',
   },
   {
     code: 'bf',
+    capital: 'Ouagadougou',
+    landmark: 'Cathédrale de l’Immaculée-Conception de Ouagadougou',
     funFact:
-      'Ce drapeau a été adopté en 1984 par Thomas Sankara, quand la Haute-Volta est devenue le Burkina Faso, « le pays des hommes intègres ».',
+      'Tous les deux ans, elle accueille le Fespaco, le plus grand festival de cinéma d’Afrique.',
   },
   {
     code: 'bi',
-    funFact: 'Les trois étoiles représentent la devise nationale : « Unité, Travail, Progrès ».',
+    capital: 'Gitega',
+    landmark: 'Musée national de Gitega',
+    funFact:
+      'Ancienne capitale royale, elle est redevenue capitale politique en 2019. Bujumbura reste la capitale économique.',
   },
   {
     code: 'cv',
+    capital: 'Praia',
+    landmark: 'Plateau (Praia)',
     funFact:
-      'Les dix étoiles représentent les dix îles principales de l’archipel. Le bleu évoque l’océan Atlantique et le ciel.',
+      'Son nom signifie « plage » en portugais. Elle se trouve sur l’île de Santiago, la plus grande de l’archipel.',
   },
   {
     code: 'cm',
+    capital: 'Yaoundé',
+    landmark: 'Basilique Marie-Reine-des-Apôtres de Mvolyé',
     funFact:
-      'Au temps de la fédération, ce drapeau portait deux étoiles dorées sur la bande verte. Une seule étoile, au centre, est apparue en 1975.',
+      'La ville est bâtie sur plusieurs collines et on l’appelle souvent « la ville aux sept collines ».',
   },
   {
     code: 'cf',
+    capital: 'Bangui',
+    landmark: 'Cathédrale Notre-Dame de Bangui',
     funFact:
-      'Le drapeau combine les couleurs françaises (bleu, blanc, rouge) et panafricaines (vert, jaune, rouge). Il a été conçu par Barthélemy Boganda, père de l’indépendance.',
+      'Elle s’étend sur la rive de l’Oubangui, face à la ville de Zongo, en République démocratique du Congo. Son nom signifie « les rapides ».',
   },
   {
     code: 'td',
+    capital: 'N’Djamena',
+    landmark: 'Grande Mosquée de N’Djamena',
     funFact:
-      'En 2004, le Tchad a demandé à l’ONU d’examiner la ressemblance avec le drapeau roumain. Le bleu du Tchad est plus foncé.',
+      'Elle s’est appelée Fort-Lamy jusqu’en 1973, du nom d’un commandant français tué en 1900, avant de prendre son nom actuel.',
   },
   {
     code: 'km',
+    capital: 'Moroni',
+    landmark: 'Mosquée du Vendredi de Moroni',
     funFact:
-      'Les quatre bandes et les quatre étoiles représentent les quatre îles de l’archipel, dont Mayotte, que les Comores revendiquent.',
+      'La mosquée du Vendredi, qui borde le port, remonte à 1427, et c’est le monument le plus connu de la ville.',
   },
   {
     code: 'cg',
+    capital: 'Brazzaville',
+    landmark: 'Basilique Sainte-Anne-du-Congo',
     funFact:
-      'Ce drapeau a remplacé en 1991 un drapeau rouge d’inspiration marxiste, qui flottait depuis 1970.',
+      'Elle porte le nom de l’explorateur Pierre Savorgnan de Brazza. Face à elle, de l’autre côté du fleuve Congo, se trouve Kinshasa.',
   },
   {
     code: 'cd',
+    capital: 'Kinshasa',
+    landmark: 'Palais du Peuple',
     funFact:
-      'L’étoile symbolise l’unité du pays. Le drapeau de 2006 reprend celui de 1963, après ceux du régime Mobutu et de la période suivante.',
+      'Kinshasa et Brazzaville se font face de part et d’autre du fleuve Congo : ce sont les deux capitales les plus proches du monde, si l’on met de côté Rome et le Vatican.',
   },
   {
     code: 'ci',
+    capital: 'Yamoussoukro',
+    landmark: 'Basilique Notre-Dame-de-la-Paix de Yamoussoukro',
     funFact:
-      'L’orange évoque la savane, le blanc la paix et l’unité, le vert la forêt et l’espoir. Le choix est inspiré du drapeau français pour la disposition en trois bandes verticales.',
+      'Capitale officielle depuis 1983, elle possède l’une des plus grandes églises du monde. Abidjan reste la capitale économique.',
   },
   {
     code: 'dj',
+    capital: 'Djibouti',
+    landmark: 'Mosquée Hamoudi',
     funFact:
-      'Le bleu évoque la mer, le ciel et le peuple issa, le vert la terre et le peuple afar. L’étoile rouge symbolise l’unité et le sang versé.',
+      'Le port est situé à l’entrée de la mer Rouge, un passage stratégique qui abrite des bases militaires de plusieurs pays.',
   },
   {
     code: 'eg',
+    capital: 'Le Caire',
+    landmark: 'Pyramide de Khéops',
     funFact:
-      'L’aigle d’or est l’aigle de Saladin. Les couleurs viennent de la révolte arabe et de la révolution de 1952.',
+      'Fondée en 969, elle s’appelle en arabe al-Qāhira, « la victorieuse ». Les pyramides de Gizeh sont à ses portes.',
   },
   {
     code: 'gq',
+    capital: 'Malabo',
+    landmark: 'Cathédrale Sainte-Isabelle de Malabo',
     funFact:
-      'L’arbre des armoiries est un fromager (kapok). Les six étoiles représentent le continent et les cinq îles du pays.',
+      'Contrairement à la plupart des capitales africaines, elle est sur une île, Bioko, dans le golfe de Guinée, et non sur le continent.',
   },
   {
     code: 'er',
+    capital: 'Asmara',
+    landmark: 'Fiat Tagliero',
     funFact:
-      'Le rameau d’olivier compte trente feuilles, une pour chaque année de la guerre d’indépendance.',
+      'Ses bâtiments Art déco et modernistes des années 1930, hérités de la période italienne, l’ont fait classer à l’Unesco en 2017.',
   },
   {
     code: 'sz',
+    capital: 'Mbabane',
+    landmark: 'Mbabane',
     funFact:
-      'Le bouclier et les lances sont ceux des guerriers du royaume. Le pays, ancien Swaziland, a changé de nom en 2018.',
+      'Mbabane est la capitale administrative du pays. La capitale législative et royale est Lobamba, à une vingtaine de kilomètres.',
   },
   {
     code: 'et',
+    capital: 'Addis-Abeba',
+    landmark: 'Cathédrale de la Sainte-Trinité d’Addis-Abeba',
     funFact:
-      'Ce sont les couleurs panafricaines : l’Éthiopie, jamais colonisée, a inspiré celles de nombreux États africains après leur indépendance.',
+      'Son nom signifie « nouvelle fleur » en amharique. Elle accueille le siège de l’Union africaine.',
   },
   {
     code: 'ga',
+    capital: 'Libreville',
+    landmark: 'Cathédrale Sainte-Marie de Libreville',
     funFact:
-      'Le vert évoque la forêt, le jaune l’équateur qui traverse le pays, et le bleu la mer.',
+      'Elle a été fondée en 1849 par des esclaves libérés d’un navire négrier, d’où son nom.',
   },
   {
     code: 'gm',
-    funFact: 'La bande bleue représente le fleuve Gambie, qui traverse tout le pays.',
+    capital: 'Banjul',
+    landmark: 'Arch 22',
+    funFact:
+      'Située sur l’île Saint-Mary, à l’embouchure du fleuve Gambie, elle s’appelait Bathurst jusqu’en 1973.',
   },
   {
     code: 'gh',
+    capital: 'Accra',
+    landmark: 'Place de l’Étoile noire',
     funFact:
-      'L’étoile noire est celle de la Black Star Line de Marcus Garvey. Premier pays d’Afrique subsaharienne indépendant (1957), le Ghana l’a placée sur son drapeau.',
+      'En 1957, le Ghana est devenu le premier pays d’Afrique subsaharienne à obtenir son indépendance. L’événement a été proclamé à Accra.',
   },
   {
     code: 'gn',
+    capital: 'Conakry',
+    landmark: 'Grande mosquée Fayçal de Conakry',
     funFact:
-      'Ce sont les couleurs panafricaines. Elles correspondent à la devise « Travail, Justice, Solidarité » : rouge pour le travail, jaune pour la justice, vert pour la solidarité.',
+      'La ville s’étire sur la presqu’île de Kaloum, une langue de terre étroite qui avance dans l’océan Atlantique.',
   },
   {
     code: 'gw',
+    capital: 'Bissau',
+    landmark: 'Forteresse d’Amura',
     funFact:
-      'Le drapeau est celui du mouvement indépendantiste PAIGC. Le Cap-Vert en a utilisé un très proche jusqu’en 1992.',
+      'Son port est dominé par la forteresse d’Amura, construite au XVIIIe siècle par les Portugais.',
   },
   {
     code: 'ke',
+    capital: 'Nairobi',
+    landmark: 'Centre de conférences international Kenyatta',
     funFact:
-      'Le bouclier et les deux lances symbolisent la défense de la liberté. Le noir représente le peuple, le rouge le sang versé, le vert la terre.',
+      'Un parc national, où vivent des lions et des girafes, s’étend à la limite de la ville, avec les gratte-ciel en arrière-plan.',
   },
   {
     code: 'ls',
+    capital: 'Maseru',
+    landmark: 'Basotho Hat',
     funFact:
-      'Le chapeau est le mokorotlo, un chapeau de paille traditionnel basotho. Il apparaît sur le drapeau depuis 2006.',
+      'Le pays est entièrement enclavé dans l’Afrique du Sud, et Maseru se trouve juste à la frontière.',
   },
   {
     code: 'lr',
+    capital: 'Monrovia',
+    landmark: 'Monrovia',
     funFact:
-      'Fondé par d’anciens esclaves américains affranchis, le Libéria s’inspire des États-Unis. Les onze bandes représentent les onze signataires de la déclaration d’indépendance.',
+      'Elle porte le nom du président américain James Monroe, qui soutenait le retour d’Afro-Américains libérés vers l’Afrique.',
   },
   {
     code: 'ly',
+    capital: 'Tripoli',
+    landmark: 'Arc de Marc Aurèle',
     funFact:
-      'Ce drapeau est celui de la monarchie de 1951. Les insurgés l’ont repris en 2011, remplaçant le drapeau entièrement vert de Kadhafi.',
+      'Son nom vient du grec et signifie « trois villes » : Oea, Sabratha et Leptis Magna formaient l’ancienne Tripolitaine.',
   },
   {
     code: 'mg',
+    capital: 'Antananarivo',
+    landmark: 'Rova d’Antananarivo',
     funFact:
-      'Le blanc, le rouge et le vert reprennent les couleurs du royaume de Madagascar, avant la colonisation.',
+      'Son nom signifie « la ville des mille » en malgache. Elle est bâtie sur des collines dominées par l’ancien palais royal.',
   },
   {
     code: 'mw',
+    capital: 'Lilongwe',
+    landmark: 'Lilongwe',
     funFact:
-      'Le soleil levant évoque l’aube d’une nouvelle ère. Un drapeau au soleil blanc a été utilisé de 2010 à 2012 avant le retour de celui-ci.',
+      'Elle est capitale depuis 1975 : le gouvernement a quitté l’ancienne capitale, Zomba, pour cette ville plus centrale.',
   },
   {
     code: 'ml',
+    capital: 'Bamako',
+    landmark: 'Grande Mosquée de Bamako',
     funFact:
-      'Ce sont les couleurs panafricaines, dans l’ordre inverse de celui de la Guinée. Le Sénégal voisin a le même drapeau, avec en plus une étoile verte.',
+      'Elle est bâtie sur le Niger. Son nom viendrait du bambara et signifierait « le marigot des caïmans ».',
   },
   {
     code: 'mr',
+    capital: 'Nouakchott',
+    landmark: 'Mosquée saoudienne de Nouakchott',
     funFact:
-      'Les bandes rouges ont été ajoutées en 2017, en hommage au sang versé par les martyrs de la résistance.',
+      'Son nom signifie « le lieu des vents ». La ville est bâtie tout près de l’océan Atlantique, au bord du désert.',
   },
   {
     code: 'mu',
+    capital: 'Port-Louis',
+    landmark: 'Aapravasi Ghat',
     funFact:
-      'Le rouge évoque la lutte pour la liberté, le bleu l’océan Indien, le jaune la lumière et le vert la végétation.',
+      'Le site d’Aapravasi Ghat, par où sont arrivés au XIXe siècle les travailleurs engagés venus d’Inde, est classé à l’Unesco depuis 2006.',
   },
   {
     code: 'ma',
+    capital: 'Rabat',
+    landmark: 'Tour Hassan',
     funFact:
-      'Le pentagramme est le sceau de Salomon. Le rouge est la couleur de la dynastie alaouite, au pouvoir depuis le XVIIe siècle.',
+      'La tour Hassan, commencée en 1195, devait être le plus haut minaret du monde. Elle est restée inachevée à la mort du sultan.',
   },
   {
     code: 'mz',
+    capital: 'Maputo',
+    landmark: 'Gare centrale de Maputo',
     funFact:
-      'C’est le seul drapeau national qui représente un fusil d’assaut moderne, un AK-47. Il évoque la lutte pour l’indépendance.',
+      'Appelée Lourenço Marques jusqu’en 1976, elle a été rebaptisée Maputo après l’indépendance. Sa gare centrale a été inaugurée en 1916.',
   },
   {
     code: 'na',
+    capital: 'Windhoek',
+    landmark: 'Christuskirche de Windhoek',
     funFact:
-      'Le soleil doré compte douze rayons. Le vert évoque la végétation, le bleu le ciel et l’Atlantique, le rouge le peuple.',
+      'L’église luthérienne Christuskirche, consacrée en 1910, rappelle le passé colonial allemand de la ville.',
   },
   {
     code: 'ne',
-    funFact:
-      'Le disque orange est un soleil. Le drapeau ressemble à celui de l’Inde, qui est en revanche orné d’une roue bleue.',
+    capital: 'Niamey',
+    landmark: 'Grande Mosquée de Niamey',
+    funFact: 'Elle est traversée par le fleuve Niger, que l’on franchit par le pont Kennedy.',
   },
   {
     code: 'ng',
+    capital: 'Abuja',
+    landmark: 'Mosquée nationale d’Abuja',
     funFact:
-      'Le drapeau a été dessiné en 1959 par un étudiant, Michael Taiwo Akinkunmi, lors d’un concours.',
+      'Capitale depuis 1991, elle a remplacé Lagos, trop engorgée. Elle est dominée par Aso Rock, un énorme rocher.',
   },
   {
     code: 'rw',
+    capital: 'Kigali',
+    landmark: 'Kigali Convention Centre',
     funFact:
-      'Ce drapeau a été adopté en 2001, après le génocide de 1994, pour tourner la page d’un drapeau associé au régime d’avant 1994. Le soleil évoque la lumière et l’espoir.',
+      'Elle est réputée pour sa propreté : les sacs en plastique y sont interdits depuis 2008, et un samedi par mois on nettoie les rues en commun.',
   },
   {
     code: 'st',
+    capital: 'São Tomé',
+    landmark: 'Cathédrale de São Tomé',
     funFact:
-      'Les deux étoiles noires représentent les deux îles principales : São Tomé et Príncipe.',
+      'Le pays est traversé par l’équateur, qui passe sur l’îlot das Rolas, au sud de l’île de São Tomé.',
   },
   {
     code: 'sn',
+    capital: 'Dakar',
+    landmark: 'Monument de la Renaissance africaine',
     funFact:
-      'L’étoile verte à cinq branches fait la différence avec le drapeau du Mali. Elle symbolise la liberté et l’espoir.',
+      'Dakar se trouve sur la presqu’île du Cap-Vert, le point le plus à l’ouest du continent africain. Le monument de la Renaissance africaine mesure 49 mètres.',
   },
   {
     code: 'sc',
+    capital: 'Victoria',
+    landmark: 'Tour de l’Horloge de Victoria',
     funFact:
-      'Adopté en 1996, ce drapeau en éventail évoque un soleil levant au-dessus de la mer, et fait partie des plus originaux du monde.',
+      'L’une des plus petites capitales du monde possède une réplique de « Little Ben », la tour d’horloge de la gare Victoria à Londres, installée en 1903.',
   },
   {
     code: 'sl',
+    capital: 'Freetown',
+    landmark: 'Fourah Bay College',
     funFact:
-      'Le vert évoque l’agriculture et les montagnes, le blanc l’unité et la justice, le bleu l’océan et le port de Freetown.',
+      'Elle a été fondée en 1792 pour accueillir d’anciens esclaves libérés. Le Fourah Bay College, fondé en 1827, est l’une des plus anciennes universités d’Afrique subsaharienne.',
   },
   {
     code: 'so',
+    capital: 'Mogadiscio',
+    landmark: 'Mogadiscio',
     funFact:
-      'Les cinq branches de l’étoile représentent les cinq territoires peuplés de Somaliens : les anciennes Somalies italienne et britannique, Djibouti, l’Ogaden éthiopien et le nord du Kenya.',
+      'Au Moyen Âge, c’était un grand port commerçant de la côte swahilie : le voyageur Ibn Battuta y est passé vers 1331.',
   },
   {
     code: 'za',
+    capital: 'Pretoria',
+    landmark: 'Union Buildings',
     funFact:
-      'Adopté en 1994 à la fin de l’apartheid, il comporte six couleurs. Le « Y » symbolise la convergence de peuples différents vers l’unité.',
+      'Pretoria est la capitale administrative. Le parlement siège au Cap et la justice à Bloemfontein : l’Afrique du Sud a trois capitales.',
   },
   {
     code: 'ss',
+    capital: 'Djouba',
+    landmark: 'Mausolée de John Garang',
     funFact:
-      'Le Soudan du Sud est le plus jeune État du monde (2011). Son drapeau reprend celui du mouvement de libération SPLM.',
+      'Le Soudan du Sud est le plus jeune pays du monde, indépendant depuis 2011, et Djouba en est la capitale depuis cette date.',
   },
   {
     code: 'sd',
+    capital: 'Khartoum',
+    landmark: 'Khartoum',
     funFact:
-      'Il porte les couleurs panarabes, issues de la Grande Révolte arabe de 1916, et il a été adopté en 1970.',
+      'C’est là que le Nil Bleu et le Nil Blanc se rejoignent pour former le Nil, qui coule ensuite vers l’Égypte.',
   },
   {
     code: 'tz',
+    capital: 'Dodoma',
+    landmark: 'Dodoma',
     funFact:
-      'Il est né de la fusion du Tanganyika et de Zanzibar en 1964, en combinant les couleurs du Tanganyika (vert, noir, jaune) et celles de Zanzibar (bleu, noir, vert).',
+      'Dodoma est la capitale officielle, au centre du pays. Dar es Salaam, bien plus grande, reste la capitale économique.',
   },
   {
     code: 'tg',
-    funFact: 'Les cinq bandes représentent les cinq régions du pays.',
+    capital: 'Lomé',
+    landmark: 'Cathédrale du Sacré-Cœur de Lomé',
+    funFact:
+      'Elle est collée à la frontière du Ghana, que l’on peut atteindre en quelques minutes.',
   },
   {
     code: 'tn',
+    capital: 'Tunis',
+    landmark: 'Mosquée Zitouna',
     funFact:
-      'Le rouge rappelle celui de l’Empire ottoman, auquel la Tunisie appartenait. Le drapeau actuel date de 1831.',
+      'Sa médina, avec ses souks et sa mosquée Zitouna, est classée à l’Unesco depuis 1979. Les ruines de Carthage sont toutes proches.',
   },
   {
     code: 'ug',
+    capital: 'Kampala',
+    landmark: 'Mosquée nationale d’Ouganda',
     funFact:
-      'L’oiseau est une grue royale, emblème national de l’Ouganda. Sa patte levée évoque la douceur.',
+      'La ville est née sur sept collines. Aujourd’hui plus étendue, elle compte la mosquée nationale, achevée en 2006.',
   },
   {
     code: 'zm',
+    capital: 'Lusaka',
+    landmark: 'Lusaka',
     funFact:
-      'L’aigle symbolise la capacité des Zambiens à surmonter les difficultés. Le drapeau est celui de l’indépendance en 1964.',
+      'Son nom viendrait de celui d’un chef local. Elle est devenue la capitale de la Rhodésie du Nord en 1935, puis de la Zambie à l’indépendance.',
   },
   {
     code: 'zw',
+    capital: 'Harare',
+    landmark: 'Harare',
     funFact:
-      'L’oiseau est l’oiseau du Zimbabwe, sculpté dans la pierre à Grand Zimbabwe, site médiéval qui a donné son nom au pays.',
+      'Elle s’est appelée Salisbury jusqu’en 1982, avant de prendre le nom du chef Neharawa, qui avait vécu sur le site.',
   },
 ];

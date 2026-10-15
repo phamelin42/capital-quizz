@@ -1,5 +1,8 @@
-/** URL d’intégration Google Maps pour un pays, sans clé d’API. Le nom vient de nos données, jamais d’une saisie. */
-export function mapUrl(countryName: string): string {
-  const params = new URLSearchParams({ q: countryName, output: 'embed', hl: 'fr' });
+/**
+ * URL d’intégration Google Maps pour une capitale, sans clé d’API. La capitale et le pays (ou l’état)
+ * viennent de nos données, jamais d’une saisie.
+ */
+export function mapUrl(capital: string, region: string): string {
+  const params = new URLSearchParams({ q: `${capital}, ${region}`, output: 'embed', hl: 'fr' });
   return `https://www.google.com/maps?${params.toString()}`;
 }

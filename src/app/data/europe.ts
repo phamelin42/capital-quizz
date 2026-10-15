@@ -1,224 +1,311 @@
-import { Country } from './country';
+import { Place } from './place';
 
-export const EUROPE: readonly Country[] = [
+export const EUROPE: readonly Place[] = [
   {
     code: 'al',
+    capital: 'Tirana',
+    landmark: 'Place Skanderbeg',
     funFact:
-      'L’aigle bicéphale rappelle Skanderbeg, héros du XVe siècle. Les Albanais appellent leur pays Shqipëria, « le pays des aigles ».',
+      'Au début des années 2000, le maire Edi Rama a fait repeindre les façades grises de l’époque communiste en couleurs vives, ce qui a changé l’image de la ville.',
   },
   {
     code: 'ad',
+    capital: 'Andorre-la-Vieille',
+    landmark: 'Casa de la Vall',
     funFact:
-      'Les armoiries rappellent les deux coprinces d’Andorre : le comte de Foix, dont le rôle revient aujourd’hui au président français, et l’évêque d’Urgell.',
+      'À environ 1 000 mètres d’altitude, c’est la plus haute capitale d’Europe. La Casa de la Vall, bâtie en 1580, abritait déjà le parlement du pays.',
   },
   {
     code: 'at',
+    capital: 'Vienne',
+    landmark: 'Palais de Schönbrunn',
     funFact:
-      'Selon la légende, le duc Léopold V sortit de la bataille d’Acre (1191) la tunique blanche tachée de sang, sauf sous sa ceinture. Il en serait resté ces deux bandes rouges.',
+      'Des vignobles poussent à l’intérieur même de la ville, et l’on y boit le vin nouveau dans des tavernes appelées Heuriger.',
   },
   {
     code: 'by',
+    capital: 'Minsk',
+    landmark: 'Bibliothèque nationale de Biélorussie',
     funFact:
-      'Le motif vertical s’inspire d’une broderie traditionnelle des serviettes rituelles biélorusses. Le drapeau actuel a été adopté en 1995 par référendum.',
+      'Très fortement détruite pendant la Seconde Guerre mondiale, Minsk a été presque entièrement reconstruite, d’où ses larges avenues rectilignes.',
   },
   {
     code: 'be',
+    capital: 'Bruxelles',
+    landmark: 'Grand-Place',
     funFact:
-      'Ces couleurs sont celles du duché de Brabant (lion d’or sur fond noir, langue et griffes rouges). Elles furent adoptées lors de la révolution de 1830, en bandes verticales à la française.',
+      'Elle accueille la Commission européenne et le Conseil de l’Union européenne. La Grand-Place, place de marché du Moyen Âge, est classée à l’Unesco depuis 1998.',
   },
   {
     code: 'ba',
+    capital: 'Sarajevo',
+    landmark: 'Baščaršija',
     funFact:
-      'Le triangle évoque la forme du pays et ses trois côtés, les trois peuples constitutifs. Les étoiles sont coupées aux extrémités pour suggérer une suite infinie.',
+      'La ville a accueilli les Jeux olympiques d’hiver de 1984. C’est aussi là que l’archiduc François-Ferdinand a été assassiné en 1914.',
   },
   {
     code: 'bg',
+    capital: 'Sofia',
+    landmark: 'Cathédrale Alexandre-Nevski',
     funFact:
-      'Sous le régime communiste, les armoiries de la République populaire ont figuré dans le coin du drapeau jusqu’en 1990.',
+      'Appelée Serdica à l’époque romaine, Sofia a pour devise « Elle grandit, mais ne vieillit pas ».',
   },
   {
     code: 'hr',
+    capital: 'Zagreb',
+    landmark: 'Cathédrale de Zagreb',
     funFact:
-      'Le damier, la šahovnica, est un emblème croate attesté depuis le Moyen Âge. Sa première case, en haut à gauche, est rouge.',
+      'Son funiculaire, en service depuis 1893, ne mesure que 66 mètres : c’est l’un des plus courts moyens de transport public du monde.',
   },
   {
     code: 'cz',
+    capital: 'Prague',
+    landmark: 'Pont Charles',
     funFact:
-      'Le triangle bleu a été ajouté en 1920 pour que la Tchécoslovaquie ne soit plus confondue avec la Pologne, dont les couleurs sont blanc et rouge.',
+      'L’horloge astronomique de la vieille ville, installée en 1410, est la plus ancienne du monde encore en fonctionnement.',
   },
   {
     code: 'dk',
+    capital: 'Copenhague',
+    landmark: 'Nyhavn',
     funFact:
-      'C’est l’un des plus anciens drapeaux nationaux encore utilisés. Selon la légende, il serait tombé du ciel pendant la bataille de Lindanise, en 1219.',
+      'Les jardins de Tivoli, ouverts en 1843 en plein centre, comptent parmi les plus anciens parcs d’attractions du monde.',
   },
   {
     code: 'ee',
+    capital: 'Tallinn',
+    landmark: 'Vieille ville de Tallinn',
     funFact:
-      'Ce drapeau est né en 1884 comme emblème d’une société d’étudiants, avant de devenir celui du pays.',
+      'Son centre médiéval est l’un des mieux conservés d’Europe du Nord. Le logiciel Skype a été conçu par des développeurs estoniens.',
   },
   {
     code: 'fi',
+    capital: 'Helsinki',
+    landmark: 'Cathédrale d’Helsinki',
     funFact:
-      'Le bleu évoque les milliers de lacs du pays et le blanc ses étendues de neige. Le drapeau a été adopté en 1918, peu après l’indépendance.',
+      'Devenue capitale en 1812 sous l’Empire russe, elle a été rebâtie en style néoclassique par l’architecte Carl Ludvig Engel.',
   },
   {
     code: 'fr',
+    capital: 'Paris',
+    landmark: 'Tour Eiffel',
     funFact:
-      'Le bleu et le rouge sont les couleurs de Paris, le blanc celle de la monarchie. Elles ont été réunies dans la cocarde de 1789, dont la tradition veut que La Fayette l’ait proposée.',
+      'La tour Eiffel, élevée pour l’Exposition universelle de 1889, ne devait rester debout que vingt ans avant d’être démontée.',
   },
   {
     code: 'de',
+    capital: 'Berlin',
+    landmark: 'Porte de Brandebourg',
     funFact:
-      'Ces couleurs viennent de l’uniforme du corps franc de Lützow, pendant les guerres napoléoniennes, puis des révolutionnaires de 1848.',
+      'Le Mur, long de 155 kilomètres autour de Berlin-Ouest, est tombé le 9 novembre 1989. La porte de Brandebourg se trouvait alors dans la zone frontière.',
   },
   {
     code: 'gr',
+    capital: 'Athènes',
+    landmark: 'Parthénon',
     funFact:
-      'Selon l’explication traditionnelle, les neuf bandes correspondent aux neuf syllabes de la devise « Liberté ou la mort » (Ελευθερία ή θάνατος).',
+      'Selon la légende, la déesse Athéna a offert l’olivier aux habitants et a donné son nom à la ville. Les premiers Jeux olympiques modernes s’y sont tenus en 1896.',
   },
   {
     code: 'hu',
+    capital: 'Budapest',
+    landmark: 'Parlement hongrois',
     funFact:
-      'Ces trois couleurs figurent depuis le Moyen Âge dans les armoiries hongroises. Le drapeau horizontal s’impose à partir de 1848.',
+      'La ville est née en 1873 de la réunion de trois villes : Buda, Óbuda et Pest, séparées par le Danube.',
   },
   {
     code: 'is',
+    capital: 'Reykjavik',
+    landmark: 'Hallgrímskirkja',
     funFact:
-      'On y lit souvent l’océan (bleu), les volcans (rouge) et les glaciers (blanc). Le drapeau actuel date de 1944, de l’indépendance vis-à-vis du Danemark.',
+      'C’est la capitale d’un État souverain la plus au nord du monde. Son nom signifie « baie des fumées », à cause des vapeurs des sources chaudes.',
   },
   {
     code: 'ie',
+    capital: 'Dublin',
+    landmark: 'Trinity College',
     funFact:
-      'Le tricolore a été offert en 1848 par des Françaises à Thomas Francis Meagher. Le vert représente les catholiques, l’orange les protestants (la maison d’Orange) et le blanc la paix entre eux.',
+      'Le Livre de Kells, manuscrit enluminé du IXe siècle, est exposé à la bibliothèque de Trinity College.',
   },
   {
     code: 'it',
+    capital: 'Rome',
+    landmark: 'Colisée',
     funFact:
-      'Il s’inspire du tricolore français : il est apparu en 1797, quand l’armée de Bonaparte a fait naître la République cispadane.',
+      'Inauguré en l’an 80, le Colisée pouvait accueillir environ 50 000 spectateurs pour des combats de gladiateurs.',
   },
   {
     code: 'lv',
+    capital: 'Riga',
+    landmark: 'Maison des Têtes noires',
     funFact:
-      'Selon la légende, un chef letton blessé fut enveloppé dans un drap blanc. Seuls les bords du drap se teintèrent de sang.',
+      'Son centre abrite l’un des plus grands ensembles d’immeubles Art nouveau d’Europe, et il est classé à l’Unesco.',
   },
   {
     code: 'li',
+    capital: 'Vaduz',
+    landmark: 'Château de Vaduz',
     funFact:
-      'La couronne a été ajoutée en 1937 : aux Jeux olympiques de Berlin, en 1936, on s’était aperçu que le drapeau d’Haïti était identique.',
+      'Avec environ 5 000 habitants, c’est l’une des plus petites capitales du monde. Le prince du Liechtenstein réside au château qui domine la ville.',
   },
   {
     code: 'lt',
+    capital: 'Vilnius',
+    landmark: 'Tour de Gediminas',
     funFact:
-      'Le jaune évoque les champs de blé, le vert les forêts et la liberté, le rouge le sang versé pour le pays. Il a été adopté en 1918 et interdit sous le régime soviétique.',
+      'Dans le quartier d’Užupis, une « république » artistique proclamée en 1997 affiche sa constitution sur un mur de la rue principale.',
   },
   {
     code: 'lu',
+    capital: 'Luxembourg',
+    landmark: 'Pont Adolphe',
     funFact:
-      'Ses couleurs viennent des armoiries du grand-duché : un lion rouge sur un fond rayé de bandes blanches et bleues.',
+      'La vieille ville, bâtie sur un promontoire rocheux percé de galeries (les casemates du Bock), est classée à l’Unesco depuis 1994.',
   },
   {
     code: 'mt',
+    capital: 'La Valette',
+    landmark: 'Co-cathédrale Saint-Jean de La Valette',
     funFact:
-      'La croix de George a été décernée à l’île par le roi George VI en 1942, pour la bravoure de sa population pendant le siège de la Seconde Guerre mondiale.',
+      'Elle porte le nom de Jean de Valette, grand maître de l’ordre de Malte qui la fit fonder en 1566. Elle a été capitale européenne de la culture en 2018.',
   },
   {
     code: 'md',
+    capital: 'Chisinau',
+    landmark: 'Cathédrale de la Nativité de Chișinău',
     funFact:
-      'L’aurochs, entouré d’une étoile, d’une rose et d’un croissant, est un symbole ancien de la Moldavie.',
+      'Tout près de la ville, les caves de Mileștii Mici abritent des dizaines de kilomètres de galeries où vieillissent des millions de bouteilles de vin.',
   },
   {
     code: 'mc',
+    capital: 'Monaco',
+    landmark: 'Casino de Monte-Carlo',
     funFact:
-      'Le rouge et le blanc sont les couleurs de la famille Grimaldi, au pouvoir depuis 1297. Les deux drapeaux, monégasque et indonésien, ne diffèrent que par leurs proportions.',
+      'Le Grand Prix de Monaco se court dans les rues de la ville depuis 1929, sur un circuit resté presque identique.',
   },
   {
     code: 'me',
-    funFact:
-      'L’aigle bicéphale est l’emblème de la dynastie Petrović-Njegoš. Le Monténégro est devenu indépendant en 2006, après un référendum.',
+    capital: 'Podgorica',
+    landmark: 'Cathédrale de la Résurrection de Podgorica',
+    funFact: 'De 1946 à 1992, la ville s’est appelée Titograd, en l’honneur du maréchal Tito.',
   },
   {
     code: 'nl',
+    capital: 'Amsterdam',
+    landmark: 'Rijksmuseum',
     funFact:
-      'Le premier drapeau était orange, blanc, bleu, aux couleurs du prince d’Orange. Selon l’explication la plus répandue, le rouge l’a remplacé au XVIIe siècle car l’orange se voyait mal en mer.',
+      'Amsterdam est la capitale du pays, mais le gouvernement et le parlement siègent à La Haye.',
   },
   {
     code: 'mk',
+    capital: 'Skopje',
+    landmark: 'Pont de pierre de Skopje',
     funFact:
-      'Le premier drapeau (1992) montrait le soleil de Vergina, ce qui a provoqué une querelle avec la Grèce. En 1995, on l’a remplacé par ce soleil à huit rayons.',
+      'Mère Teresa y est née en 1910. Une maison commémorative et une statue lui rendent hommage dans la ville.',
   },
   {
     code: 'no',
+    capital: 'Oslo',
+    landmark: 'Opéra d’Oslo',
     funFact:
-      'Adopté en 1821, il reprend le rouge et la croix du Dannebrog et y ajoute une croix bleue intérieure. Rouge, blanc et bleu sont aussi les couleurs de la liberté en France et au Royaume-Uni.',
+      'Le prix Nobel de la paix y est remis chaque année, dans l’hôtel de ville, alors que les autres Nobel sont décernés à Stockholm.',
   },
   {
     code: 'pl',
+    capital: 'Varsovie',
+    landmark: 'Château royal de Varsovie',
     funFact:
-      'Ces couleurs viennent des armoiries nationales : un aigle blanc couronné sur fond rouge, symbole qui remonte au XIIIe siècle.',
+      'Détruite à plus de 80 % en 1944-1945, sa vieille ville a été reconstruite à l’identique, en s’aidant notamment de tableaux du peintre Canaletto.',
   },
   {
     code: 'pt',
+    capital: 'Lisbonne',
+    landmark: 'Tour de Belém',
     funFact:
-      'Le vert et le rouge sont ceux de la république de 1910, qui a remplacé le bleu et blanc de la monarchie. La sphère armillaire évoque les Découvertes.',
+      'Le 1er novembre 1755, un séisme suivi d’un tsunami et d’incendies a détruit une grande partie de la ville, qui a été rebâtie selon un plan en damier.',
   },
   {
     code: 'ro',
+    capital: 'Bucarest',
+    landmark: 'Palais du Parlement',
     funFact:
-      'En décembre 1989, les révolutionnaires ont découpé les armoiries communistes au milieu du drapeau, laissant un trou, devenu l’image de la chute de Ceaușescu.',
+      'Voulu par Nicolae Ceaușescu, le Palais du Parlement compte plus de 1 000 pièces : c’est l’un des plus grands bâtiments administratifs du monde.',
   },
   {
     code: 'ru',
+    capital: 'Moscou',
+    landmark: 'Cathédrale Basile-le-Bienheureux',
     funFact:
-      'Pierre le Grand s’est inspiré du drapeau néerlandais pour sa flotte, à la fin du XVIIe siècle. Il fut remplacé par le drapeau rouge soviétique de 1922 à 1991.',
+      'Son métro, ouvert en 1935, est célèbre pour ses stations décorées de marbre, de mosaïques et de lustres comme des palais.',
   },
   {
     code: 'sm',
+    capital: 'Saint-Marin',
+    landmark: 'Mont Titano',
     funFact:
-      'Les trois tours (Guaita, Cesta, Montale) dominent le mont Titano. Le pays, fondé selon la tradition en 301 par saint Marin, se dit la plus ancienne république du monde.',
+      'Le pays se dit la plus ancienne république du monde, fondée selon la tradition en l’an 301 par le tailleur de pierre Marinus.',
   },
   {
     code: 'rs',
+    capital: 'Belgrade',
+    landmark: 'Forteresse de Belgrade',
     funFact:
-      'Ce sont les couleurs panslaves, comme celles de la Russie, mais dans l’ordre inverse.',
+      'La ville s’étend à la confluence de la Save et du Danube, sous la forteresse de Kalemegdan qui la surveille depuis l’Antiquité.',
   },
   {
     code: 'sk',
+    capital: 'Bratislava',
+    landmark: 'Château de Bratislava',
     funFact:
-      'La double croix, d’origine byzantine, se dresse sur trois monts qui évoquent les Tatras, la Fatra et la Matra. Ces armoiries distinguent le drapeau de celui de la Russie.',
+      'C’est la seule capitale du monde qui touche deux autres pays : l’Autriche et la Hongrie sont à quelques kilomètres.',
   },
   {
     code: 'si',
+    capital: 'Ljubljana',
+    landmark: 'Château de Ljubljana',
     funFact:
-      'La montagne est le Triglav, point culminant du pays. Les trois étoiles viennent des armoiries des comtes de Celje.',
+      'Elle a été capitale verte de l’Europe en 2016, et son centre est presque entièrement réservé aux piétons.',
   },
   {
     code: 'es',
+    capital: 'Madrid',
+    landmark: 'Palais royal de Madrid',
     funFact:
-      'Charles III a choisi ces couleurs en 1785 pour que la marine espagnole ne soit plus confondue en mer avec les autres flottes Bourbon, qui battaient pavillon blanc.',
+      'À environ 650 mètres d’altitude, c’est la capitale la plus haute de l’Union européenne.',
   },
   {
     code: 'se',
+    capital: 'Stockholm',
+    landmark: 'Gamla stan',
     funFact:
-      'Le bleu et le jaune viennent des armoiries nationales (trois couronnes d’or sur fond bleu). La croix s’inspire du Dannebrog danois.',
+      'La ville est bâtie sur quatorze îles reliées par une cinquantaine de ponts, entre le lac Mälar et la mer Baltique.',
   },
   {
     code: 'ch',
+    capital: 'Berne',
+    landmark: 'Tour de l’Horloge de Berne',
     funFact:
-      'Avec celui du Vatican, c’est l’un des deux seuls drapeaux nationaux carrés. L’emblème de la Croix-Rouge en inverse les couleurs, en hommage à la Suisse, pays de son fondateur Henri Dunant.',
+      'Albert Einstein y travaillait à l’office des brevets quand il a publié sa théorie de la relativité restreinte, en 1905.',
   },
   {
     code: 'ua',
+    capital: 'Kiev',
+    landmark: 'Cathédrale Sainte-Sophie de Kiev',
     funFact:
-      'On y voit souvent le ciel au-dessus d’un champ de blé. Il a été interdit sous le régime soviétique, puis rétabli en 1991 à l’indépendance.',
+      'La station de métro Arsenalna, à environ 105 mètres sous terre, est la plus profonde du monde.',
   },
   {
     code: 'gb',
+    capital: 'Londres',
+    landmark: 'Palais de Westminster',
     funFact:
-      'Il superpose les croix de saint Georges (Angleterre), saint André (Écosse) et saint Patrick (Irlande). Le pays de Galles n’y figure pas, car il était déjà rattaché à l’Angleterre à sa création.',
+      'Big Ben n’est pas la tour, mais le nom de sa grosse cloche, qui pèse environ treize tonnes.',
   },
   {
     code: 'va',
+    capital: 'Cité du Vatican',
+    landmark: 'Basilique Saint-Pierre',
     funFact:
-      'Avec celui de la Suisse, c’est l’un des deux seuls drapeaux nationaux carrés. Les clés d’or et d’argent symbolisent le pouvoir spirituel et temporel du pape.',
+      'Avec environ 0,44 km², c’est le plus petit État du monde. Il compte moins de mille habitants et a son propre timbre, sa monnaie et sa gare.',
   },
 ];

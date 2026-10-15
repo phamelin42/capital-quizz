@@ -10,7 +10,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { FdButton, FdIcon } from 'fuda';
-import { countryName } from '../data/country-name';
+import { placeName } from '../data/us-state-name';
 import { QuizService } from '../quiz/quiz.service';
 
 type OptionState = 'idle' | 'correct' | 'wrong' | 'dimmed';
@@ -31,16 +31,22 @@ export class AnswerOptions {
   private readonly optionButtons = viewChildren('option', { read: ElementRef<HTMLButtonElement> });
   private readonly nextButton = viewChild('nextBtn', { read: ElementRef<HTMLButtonElement> });
 
-  protected readonly name = countryName;
+  protected readonly name = (code: string): string => placeName(this.quiz.mode(), code);
+
+  protected readonly groupLabel = computed(() =>
+    this.quiz.mode() === 'us'
+      ? 'Choisis l’état de cette capitale'
+      : 'Choisis le pays de cette capitale',
+  );
 
   /** État visuel de chaque proposition : le verdict ne repose jamais sur la couleur seule (icône + texte masqué). */
   protected readonly states = computed(() => {
-    const { country, options } = this.quiz.question();
+    const { place, options } = this.quiz.question();
     const answer = this.quiz.answer();
     return Object.fromEntries(
       options.map((option): [string, OptionState] => {
         if (answer === null) return [option.code, 'idle'];
-        if (option.code === country.code) return [option.code, 'correct'];
+        if (option.code === place.code) return [option.code, 'correct'];
         return [option.code, option.code === answer ? 'wrong' : 'dimmed'];
       }),
     );
@@ -56,6 +62,11 @@ export class AnswerOptions {
   protected next(): void {
     this.quiz.next();
     // « Suivant » disparaît avec la question : le focus reprend sur la première proposition.
+    this.focusFirst();
+  }
+
+  /** Met le focus sur la première proposition une fois la question affichée (après « suivant » ou un changement de mode). */
+  focusFirst(): void {
     afterNextRender(() => this.optionButtons()[0]?.nativeElement.focus(), {
       injector: this.injector,
     });

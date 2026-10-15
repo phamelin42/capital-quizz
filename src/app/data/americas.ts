@@ -1,178 +1,247 @@
-import { Country } from './country';
+import { Place } from './place';
 
-export const AMERICAS: readonly Country[] = [
+export const AMERICAS: readonly Place[] = [
   {
     code: 'ag',
+    capital: 'Saint John’s',
+    landmark: 'Cathédrale Saint-Jean',
     funFact:
-      'Le « V » symbolise la victoire. Le soleil levant noir évoque l’aube d’une nouvelle ère et l’héritage africain de la population.',
+      'Les deux tours blanches de la cathédrale, reconstruite en 1847 après un séisme, dominent le port.',
   },
   {
     code: 'ar',
+    capital: 'Buenos Aires',
+    landmark: 'Obélisque de Buenos Aires',
     funFact:
-      'Dessiné en 1812 par Manuel Belgrano, il évoque le ciel et les nuages. Le soleil de Mai a un visage humain et trente-deux rayons.',
+      'L’avenue du 9-Juillet, qui passe devant l’Obélisque, mesure environ 140 mètres de large et compte parmi les plus larges du monde.',
   },
   {
     code: 'bs',
+    capital: 'Nassau',
+    landmark: 'Fort Charlotte',
     funFact:
-      'Le triangle noir symbolise la force du peuple. L’aigue-marine évoque la mer et le jaune le soleil et le sable.',
+      'Au début du XVIIIe siècle, la ville servait de repaire aux pirates, au point d’être appelée la « République des pirates ».',
   },
   {
     code: 'bb',
+    capital: 'Bridgetown',
+    landmark: 'Bridgetown et sa garnison',
     funFact:
-      'Le trident brisé symbolise la rupture avec le passé colonial. Le trident est celui de Neptune, dieu de la mer.',
+      'Le centre historique de Bridgetown et sa garnison militaire sont classés à l’Unesco depuis 2011.',
   },
   {
     code: 'bz',
+    capital: 'Belmopan',
+    landmark: 'Belmopan',
     funFact:
-      'Le Belize est l’un des rares pays à montrer des êtres humains sur son drapeau : deux bûcherons, l’un avec une hache, l’autre avec une rame. La couronne compte 50 feuilles, en souvenir de 1950.',
+      'Elle a été bâtie en 1970 pour remplacer Belize City, détruite en grande partie par l’ouragan Hattie en 1961.',
   },
   {
     code: 'bo',
+    capital: 'La Paz',
+    landmark: 'Plaza Murillo',
     funFact:
-      'Le rouge évoque la bravoure de l’armée, le jaune les richesses minérales et le vert la fertilité du pays.',
+      'À environ 3 650 mètres d’altitude, c’est le siège de gouvernement le plus haut du monde. La capitale constitutionnelle du pays est Sucre.',
   },
   {
     code: 'br',
+    capital: 'Brasília',
+    landmark: 'Cathédrale de Brasilia',
     funFact:
-      'Les 27 étoiles représentent les 26 États et le district fédéral. Elles reproduisent le ciel de Rio de Janeiro le matin du 15 novembre 1889, proclamation de la République.',
+      'Inaugurée en 1960, la ville a été bâtie en quelques années au milieu du plateau central. Son plan évoque un avion et ses bâtiments ont été dessinés par Oscar Niemeyer.',
   },
   {
     code: 'ca',
+    capital: 'Ottawa',
+    landmark: 'Colline du Parlement',
     funFact:
-      'Adopté en 1965, il a remplacé le « Red Ensign » après de longs débats. La feuille d’érable compte onze pointes.',
+      'La reine Victoria l’a choisie en 1857. L’hiver, le canal Rideau se transforme en patinoire de près de huit kilomètres.',
   },
   {
     code: 'cl',
+    capital: 'Santiago',
+    landmark: 'Gran Torre Santiago',
     funFact:
-      'L’étoile solitaire guide vers le progrès et l’honneur. Le bleu évoque le ciel, le blanc les neiges des Andes et le rouge le sang versé.',
+      'La Gran Torre Santiago, haute de 300 mètres, est la plus haute tour d’Amérique latine. Les Andes enneigées dominent la ville.',
   },
   {
     code: 'co',
+    capital: 'Bogota',
+    landmark: 'Sanctuaire de Monserrate',
     funFact:
-      'Ces couleurs viennent du drapeau de Francisco de Miranda et de la Grande Colombie. Elles sont partagées avec l’Équateur et le Venezuela, qui en descendent.',
+      'À environ 2 600 mètres d’altitude, elle ferme chaque dimanche des dizaines de kilomètres de rues aux voitures pour les laisser aux vélos : c’est la Ciclovía.',
   },
   {
     code: 'cr',
+    capital: 'San José',
+    landmark: 'Théâtre national du Costa Rica',
     funFact:
-      'La bande rouge a été ajoutée en 1848, sous l’influence du drapeau français, par Pacífica Fernández, épouse du président José María Castro.',
+      'Le Costa Rica a aboli son armée en 1948. L’ancienne caserne Bellavista, à San José, est devenue le Musée national.',
   },
   {
     code: 'cu',
+    capital: 'La Havane',
+    landmark: 'Capitole de La Havane',
     funFact:
-      'Dessiné par Narciso López en 1849, il est surnommé « Estrella solitaria ». Les trois bandes bleues représentent les trois anciens départements de l’île.',
+      'Fondée en 1519, elle est connue pour ses voitures américaines des années 1950 qui roulent encore dans ses rues.',
   },
   {
     code: 'dm',
+    capital: 'Roseau',
+    landmark: 'Roseau',
     funFact:
-      'Le perroquet est le sisserou, un oiseau endémique. Le drapeau est parfois présenté comme le seul à comporter du violet.',
+      'Le pays se surnomme « l’île nature » des Caraïbes, avec ses forêts tropicales et ses sources chaudes.',
   },
   {
     code: 'do',
+    capital: 'Saint-Domingue',
+    landmark: 'Cathédrale primatiale de Saint-Domingue',
     funFact:
-      'C’est le seul drapeau national à montrer une Bible ouverte. Le verset cité est « La vérité vous rendra libres ».',
+      'Fondée en 1496, c’est la plus ancienne ville européenne durablement habitée des Amériques. Sa zone coloniale est classée à l’Unesco.',
   },
   {
     code: 'ec',
+    capital: 'Quito',
+    landmark: 'Basilique du Vœu national',
     funFact:
-      'Les armoiries représentent un condor des Andes qui surplombe le mont Chimborazo, le volcan le plus haut du pays.',
+      'À environ 2 850 mètres d’altitude, elle a été l’une des deux premières villes classées au patrimoine mondial de l’Unesco, en 1978.',
   },
   {
     code: 'sv',
+    capital: 'San Salvador',
+    landmark: 'Cathédrale métropolitaine de San Salvador',
     funFact:
-      'Le bleu et blanc vient de la Fédération des Provinces-Unies d’Amérique centrale. Le Nicaragua et le Honduras partagent la disposition.',
+      'La ville est dominée par le volcan San Salvador, qui s’élève à près de 1 900 mètres juste à côté du centre.',
   },
   {
     code: 'gd',
+    capital: 'Saint-Georges',
+    landmark: 'Fort George',
     funFact:
-      'La noix de muscade rappelle que l’île est surnommée « l’île aux épices ». Les sept étoiles représentent les sept paroisses.',
+      'Son port est en forme de fer à cheval, au pied de collines couvertes de maisons colorées. L’île est surnommée « l’île aux épices ».',
   },
   {
     code: 'gt',
+    capital: 'Guatemala',
+    landmark: 'Palais national de la Culture',
     funFact:
-      'L’oiseau est le quetzal, symbole de liberté : on dit qu’il ne survit pas en cage. Il a aussi donné son nom à la monnaie du pays.',
+      'La capitale a été déplacée sur son site actuel en 1776, après les séismes de 1773 qui avaient détruit l’ancienne capitale, Antigua.',
   },
   {
     code: 'gy',
+    capital: 'Georgetown',
+    landmark: 'Cathédrale Saint-Georges de Georgetown',
     funFact:
-      'On l’appelle « Golden Arrow », la flèche d’or. Le drapeau a été conçu par le vexillologue américain Whitney Smith.',
+      'Beaucoup de ses bâtiments sont en bois. La cathédrale Saint-Georges, haute d’environ 43 mètres, est l’une des plus hautes églises en bois du monde.',
   },
   {
     code: 'ht',
+    capital: 'Port-au-Prince',
+    landmark: 'Marché en Fer',
     funFact:
-      'En 1803, les révolutionnaires ont arraché la bande blanche du drapeau français. Ils ont cousu bleu et rouge côte à côte, symbole de l’union des noirs et des mulâtres.',
+      'Le Marché en Fer, inauguré en 1891, est un grand marché couvert à la charpente métallique, au cœur de la ville.',
   },
   {
     code: 'hn',
-    funFact: 'Les cinq étoiles représentent les cinq États de la Fédération d’Amérique centrale.',
+    capital: 'Tegucigalpa',
+    landmark: 'Cathédrale Saint-Michel de Tegucigalpa',
+    funFact:
+      'Son nom viendrait d’une langue indigène et signifierait « colline d’argent », à cause des mines des environs.',
   },
   {
     code: 'jm',
+    capital: 'Kingston',
+    landmark: 'Bob Marley Museum',
     funFact:
-      'C’est le seul drapeau national sans rouge, blanc ni bleu. Le jaune évoque le soleil, le vert l’espoir et le noir les épreuves.',
+      'Le musée Bob Marley occupe la maison où le chanteur a vécu à la fin de sa vie, au 56 Hope Road.',
   },
   {
     code: 'mx',
+    capital: 'Mexico',
+    landmark: 'Cathédrale métropolitaine de Mexico',
     funFact:
-      'L’emblème rappelle la légende de la fondation de Tenochtitlan : les Aztèques devaient bâtir leur ville là où ils verraient un aigle sur un nopal.',
+      'Elle est bâtie à l’emplacement de Tenochtitlan, la capitale aztèque installée sur une île au milieu d’un lac. Le sol s’affaisse de quelques centimètres par an.',
   },
   {
     code: 'ni',
+    capital: 'Managua',
+    landmark: 'Ancienne cathédrale de Managua',
     funFact:
-      'C’est le seul drapeau national à comporter un arc-en-ciel. Les cinq volcans représentent les cinq États de la Fédération d’Amérique centrale.',
+      'Un séisme en 1972 a détruit une grande partie du centre-ville, qui n’a jamais été entièrement reconstruit.',
   },
   {
     code: 'pa',
+    capital: 'Panama',
+    landmark: 'Écluses de Miraflores',
     funFact:
-      'Le rouge et le bleu évoquent les deux grands partis historiques, libéral et conservateur, le blanc la paix qui les unit. Le drapeau date de 1903.',
+      'Le canal de Panama, ouvert en 1914, relie l’Atlantique au Pacifique juste à côté de la ville. Les bateaux franchissent les écluses de Miraflores.',
   },
   {
     code: 'py',
+    capital: 'Asunción',
+    landmark: 'Palais des López',
     funFact:
-      'C’est l’un des rares drapeaux dont le revers est différent de l’avers : l’avers porte les armoiries nationales et le revers le sceau du Trésor, un lion.',
+      'Fondée en 1537, elle est surnommée « la mère des villes » : de là sont parties les expéditions qui ont fondé d’autres villes d’Amérique du Sud.',
   },
   {
     code: 'pe',
+    capital: 'Lima',
+    landmark: 'Place d’Armes de Lima',
     funFact:
-      'Selon la légende, San Martín aurait vu à son arrivée des flamants roses, dont les couleurs lui auraient inspiré le rouge et le blanc.',
+      'Fondée en 1535 par Francisco Pizarro, elle s’est appelée « la cité des Rois ». Il y tombe très peu de pluie, car elle est à la lisière du désert.',
   },
   {
     code: 'kn',
+    capital: 'Basseterre',
+    landmark: 'Basseterre',
     funFact:
-      'Les deux étoiles sont les deux îles : Saint-Christophe et Nevis. Elles symbolisent l’espoir et la liberté.',
+      'Au centre, le « Circus » est un rond-point orné d’une tour d’horloge, inspiré de Piccadilly Circus à Londres.',
   },
   {
     code: 'lc',
-    funFact:
-      'Les triangles évoquent les Pitons, deux pitons volcaniques qui dominent la côte et que l’UNESCO a classés.',
+    capital: 'Castries',
+    landmark: 'Castries',
+    funFact: 'Elle porte le nom du maréchal de Castries, ministre de la Marine du roi Louis XVI.',
   },
   {
     code: 'vc',
+    capital: 'Kingstown',
+    landmark: 'Jardin botanique de Kingstown',
     funFact:
-      'Les losanges figurent des gemmes : le pays est surnommé « les joyaux des Antilles ». Disposés en « V », ils évoquent aussi Vincent.',
+      'Son jardin botanique, créé en 1765, est l’un des plus anciens de l’hémisphère occidental.',
   },
   {
     code: 'sr',
+    capital: 'Paramaribo',
+    landmark: 'Centre historique de Paramaribo',
     funFact:
-      'L’étoile jaune symbolise l’unité de tous les peuples du Suriname. Le rouge évoque l’amour et le progrès.',
+      'Son centre en bois est classé à l’Unesco depuis 2002. Une mosquée et une synagogue y sont côte à côte.',
   },
   {
     code: 'tt',
+    capital: 'Port-d’Espagne',
+    landmark: 'Queen’s Park Savannah',
     funFact:
-      'Le drapeau a été dessiné par Carlisle Chang. Il symbolise le soleil (rouge), la terre (noir) et l’eau (blanc).',
+      'Son carnaval est l’un des plus célèbres des Caraïbes. Le steelpan, ce tambour fabriqué dans un bidon d’acier, a été inventé à Trinité-et-Tobago.',
   },
   {
     code: 'us',
+    capital: 'Washington D.C.',
+    landmark: 'Capitole des États-Unis',
     funFact:
-      'La version actuelle date de 1960, avec l’arrivée d’Hawaï. Elle a été dessinée en 1958 par Robert Heft, un lycéen de 17 ans, pour un devoir de classe.',
+      'Elle porte le nom du premier président et a été fondée sur un territoire cédé par le Maryland et la Virginie. Le district fédéral de Columbia ne fait partie d’aucun état.',
   },
   {
     code: 'uy',
+    capital: 'Montevideo',
+    landmark: 'Palacio Salvo',
     funFact:
-      'Les neuf bandes représentent les neuf départements d’origine. Le soleil de Mai a un visage humain, comme celui de l’Argentine.',
+      'C’est la capitale la plus au sud d’Amérique du Sud. Le Palacio Salvo, achevé en 1928, était alors le plus haut gratte-ciel d’Amérique du Sud.',
   },
   {
     code: 've',
-    funFact:
-      'La huitième étoile a été ajoutée en 2006, en hommage à la province de Guayana et à Simón Bolívar.',
+    capital: 'Caracas',
+    landmark: 'Panthéon national du Venezuela',
+    funFact: 'Simón Bolívar y est né en 1783. Son corps repose au Panthéon national, depuis 1876.',
   },
 ];

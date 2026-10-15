@@ -1,12 +1,12 @@
 import { Component, computed, inject, input, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FdCard } from 'fuda';
-import { Country } from '../data/country';
-import { countryName } from '../data/country-name';
+import { Mode, Place } from '../data/place';
+import { placeName } from '../data/us-state-name';
 import { mapUrl } from './map-url';
 
 /**
- * Cadre en bas à droite : le pays sur Google Maps. Le parent ne l'affiche qu'une fois la question
+ * Cadre en bas à droite : la capitale sur Google Maps. Le parent ne l'affiche qu'une fois la question
  * répondue : l'iframe n'existe pas avant, donc on ne contacte pas Google et la carte ne donne pas la réponse.
  */
 @Component({
@@ -18,13 +18,15 @@ import { mapUrl } from './map-url';
   host: { class: 'app-map-panel' },
 })
 export class MapPanel {
-  readonly country = input.required<Country>();
+  readonly place = input.required<Place>();
+  readonly mode = input<Mode>('world');
 
   private readonly sanitizer = inject(DomSanitizer);
 
-  protected readonly name = computed(() => countryName(this.country().code));
-  /** L'URL est construite uniquement à partir de nos données (`countryName`), donc sûre à approuver. */
+  protected readonly region = computed(() => placeName(this.mode(), this.place().code));
+  protected readonly label = computed(() => `${this.place().capital}, ${this.region()}`);
+  /** L'URL est construite uniquement à partir de nos données (capitale et `placeName`), donc sûre à approuver. */
   protected readonly src = computed<SafeResourceUrl>(() =>
-    this.sanitizer.bypassSecurityTrustResourceUrl(mapUrl(this.name())),
+    this.sanitizer.bypassSecurityTrustResourceUrl(mapUrl(this.place().capital, this.region())),
   );
 }

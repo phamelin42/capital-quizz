@@ -1,9 +1,9 @@
 import { Component, computed, input, ViewEncapsulation } from '@angular/core';
 import { FdBadge, FdCard } from 'fuda';
-import { Country } from '../data/country';
-import { countryName } from '../data/country-name';
+import { Mode, Place } from '../data/place';
+import { placeName } from '../data/us-state-name';
 
-/** Une anecdote ou un bout d'histoire sur le drapeau. Le parent ne l'affiche qu'une fois la question répondue. */
+/** Une anecdote sur la capitale. Le parent ne l'affiche qu'une fois la question répondue. */
 @Component({
   selector: 'app-fun-fact',
   imports: [FdBadge, FdCard],
@@ -13,7 +13,8 @@ import { countryName } from '../data/country-name';
   host: { class: 'app-fun-fact' },
 })
 export class FunFact {
-  readonly country = input.required<Country>();
+  readonly place = input.required<Place>();
+  readonly mode = input<Mode>('world');
 
-  protected readonly name = computed(() => countryName(this.country().code));
+  protected readonly region = computed(() => placeName(this.mode(), this.place().code));
 }
