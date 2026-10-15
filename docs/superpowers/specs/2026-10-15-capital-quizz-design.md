@@ -20,19 +20,18 @@ Le projet est une copie de flag-quizz renommée `capital-quizz`, puis modifiée 
 
 ```ts
 interface Place {
-  /** ISO 3166-1 alpha-2 minuscules (monde) ou code postal à 2 lettres minuscules (états). Identifie aussi la photo : `places/<mode>/<code>.webp`. */
+  /** ISO 3166-1 alpha-2 minuscules (monde) ou code postal à 2 lettres minuscules (états). Identifie aussi la photo : `places/<world|us>/<code>.jpg`. */
   readonly code: string;
   /** Nom français de la capitale. */
   readonly capital: string;
   /** Nom français du monument, révélé après la réponse. */
   readonly landmark: string;
-  /** Titre de l'article Wikipédia (fr) du monument, d'où vient la photo. */
-  readonly article: string;
   /** Anecdote sur la capitale, rédigée à la main. */
   readonly funFact: string;
 }
 ```
 
+- `photo-articles.json` (`{ "world": { "fr": "Tour_Eiffel", … }, "us": { "tx": "…", … } }`) donne, pour chaque code, le titre de l'article Wikipédia (fr) du monument d'où vient la photo. Il n'est lu que par le script de photos et par les tests, pas par l'appli.
 - Nom du pays : `Intl.DisplayNames` (`country-name.ts`, avec surcharges Vatican/Palestine). Nom de l'état : table française écrite à la main (`us-state-name.ts`) ; le test impose 50 noms.
 - Capitales ambiguës (Bolivie, Afrique du Sud, Pays-Bas, Israël/Palestine, Côte d'Ivoire, Sri Lanka, Tanzanie, Bénin, Eswatini, Malaisie…) : on retient la capitale la plus couramment citée, sans article ; pour les capitales multiples, la fiche dit l'autre ville dans l'anecdote.
 - Washington D.C. n'est pas un état : absent du mode États-Unis. Il est la capitale du pays `us` dans le mode monde.
@@ -55,11 +54,11 @@ Rien n'est persisté entre deux visites.
 - `answer-options` : les propositions affichent le nom du pays ou de l'état ; `aria-label` du groupe : « Choisis le pays de cette capitale » / « Choisis l'état de cette capitale » ; le bouton suivant dit « Capitale suivante ». Le texte masqué du verdict donne la bonne réponse : « La bonne réponse était : Hongrie ».
 - `fun-fact` : anecdote sur la capitale, après la réponse seulement.
 - `map-panel` : iframe Google Maps centrée sur la capitale, `q=<capitale>, <pays ou état>`, construite uniquement à partir de nos données (donc `bypassSecurityTrustResourceUrl` reste justifié), après la réponse seulement.
-- Pied de page : « Vous voulez en voir plus ? Visitez mon [portfolio](https://phamelin.fr/#projects) », puis un lien vers le [Flag Quizz](https://flag-quizz.phamelin.fr), et la mention des crédits photo (lien vers `CREDITS.md` publié dans `public/`).
+- Pied de page : « Vous voulez en voir plus ? Visitez mon [portfolio](https://phamelin.fr/#projects) », puis un lien vers le [Flag Quizz](https://flag-quizz.phamelin.fr), et la mention des crédits photo (lien vers `credits.html`).
 
 ## Photos
 
-- `scripts/places.manifest.json` (ou équivalent TS) ne contient que `code`, `article`. `scripts/fetch-places.mjs` (`npm run places`) : pour chaque entrée, résout l'image principale de l'article `fr.wikipedia.org` via l'API REST, lit auteur et licence sur Commons, **refuse tout fichier qui n'est pas en licence libre**, télécharge une miniature de ~800 px de large, l'écrit dans `public/places/{world,us}/<code>.<ext>` et met à jour `public/places/credits.json`. Lent, relançable (saute ce qui existe), poli envers Wikimedia (pause entre requêtes, reprise sur 429, User-Agent sans donnée personnelle).
+- `scripts/fetch-places.mjs` (`npm run places`) : pour chaque entrée de `photo-articles.json`, résout l'image principale de l'article `fr.wikipedia.org` via l'API REST, lit auteur et licence sur Commons, **refuse tout fichier qui n'est pas en licence libre**, télécharge une miniature JPEG de ~800 px de large (un fichier qui n'est pas un JPEG est refusé : on change d'article), l'écrit dans `public/places/{world,us}/<code>.jpg`, met à jour `public/places/credits.json` et régénère `public/credits.html`, la page des crédits. Lent, relançable (saute ce qui existe), poli envers Wikimedia (pause entre requêtes, reprise sur 429, User-Agent sans donnée personnelle).
 - Les photos sont commitées. Le build n'a besoin d'aucun réseau.
 - Un test vérifie que chaque fiche a sa photo et son crédit ; la page affiche les crédits.
 - Si la récupération échoue pour une entrée, on change d'article dans le manifeste, on ne contourne pas la règle de licence.
