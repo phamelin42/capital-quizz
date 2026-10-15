@@ -1,6 +1,6 @@
 import { Component, computed, inject, viewChild, ViewEncapsulation } from '@angular/core';
 import { FdBadge, FdSwitch, FdThemeService } from 'fuda';
-import { AnswerOptions } from './answer-options/answer-options';
+import { AnswerForm } from './answer-form/answer-form';
 import { Mode } from './data/place';
 import { FunFact } from './fun-fact/fun-fact';
 import { MapPanel } from './map-panel/map-panel';
@@ -11,7 +11,7 @@ import { SiteFooter } from './site-footer/site-footer';
 
 @Component({
   selector: 'app-root',
-  imports: [AnswerOptions, FdBadge, FdSwitch, FunFact, MapPanel, ModeSwitch, PlaceCard, SiteFooter],
+  imports: [AnswerForm, FdBadge, FdSwitch, FunFact, MapPanel, ModeSwitch, PlaceCard, SiteFooter],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   encapsulation: ViewEncapsulation.None,
@@ -20,7 +20,7 @@ import { SiteFooter } from './site-footer/site-footer';
 export class App {
   protected readonly quiz = inject(QuizService);
   private readonly themeService = inject(FdThemeService);
-  private readonly options = viewChild.required(AnswerOptions);
+  private readonly form = viewChild.required(AnswerForm);
 
   protected readonly isDark = computed(() => this.themeService.theme() === 'dark');
 
@@ -28,10 +28,10 @@ export class App {
     this.themeService.set(dark ? 'dark' : 'light');
   }
 
-  /** Change de jeu, puis remet le focus sur la première proposition de la nouvelle question. */
+  /** Change de jeu, puis remet le focus dans le champ de réponse de la nouvelle question. */
   protected setMode(mode: Mode): void {
     if (mode === this.quiz.mode()) return;
     this.quiz.setMode(mode);
-    this.options().focusFirst();
+    this.form().focusField();
   }
 }

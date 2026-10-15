@@ -1,0 +1,55 @@
+<form class="app-form" novalidate (submit)="submit($event)">
+  <fd-text-field
+    class="app-answer-field"
+    label="Ta réponse"
+    hint="Le nom de la capitale, avec ou sans accents."
+    placeholder="Capitale"
+    [(value)]="text"
+    [disabled]="quiz.isAnswered()"
+    [invalid]="wrong()"
+  />
+  @if (!quiz.isAnswered()) {
+    <div class="app-actions">
+      <button
+        fdButton
+        type="submit"
+        variant="primary"
+        class="app-submit"
+        [attr.aria-disabled]="canSubmit() ? null : 'true'"
+      >
+        Valider
+      </button>
+      <button fdButton type="button" variant="ghost" class="app-giveup" (click)="giveUp()">
+        Je ne sais pas
+      </button>
+    </div>
+  }
+</form>
+
+<!-- Le verdict n'a pas d'encart : une ligne avec une icône et un texte, annoncée par le lecteur d'écran. -->
+<p
+  class="app-status"
+  aria-live="polite"
+  [class.app-status--correct]="quiz.isAnswered() && quiz.isCorrect()"
+  [class.app-status--wrong]="wrong()"
+>
+  @if (quiz.isAnswered()) {
+    @if (quiz.isCorrect()) {
+      <svg fdIcon="check"></svg>
+      <span>Bonne réponse : {{ capital() }}.</span>
+    } @else {
+      <svg fdIcon="close"></svg>
+      <span>
+        {{ quiz.skipped() ? 'Tu as passé.' : 'Mauvaise réponse.' }} La bonne réponse était :
+        {{ capital() }}.
+      </span>
+    }
+  }
+</p>
+
+@if (quiz.isAnswered()) {
+  <button #nextBtn fdButton size="lg" block (click)="next()">
+    Capitale suivante
+    <svg fdIcon="chevron-right"></svg>
+  </button>
+}

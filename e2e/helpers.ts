@@ -1,12 +1,14 @@
 import { expect, Page } from '@playwright/test';
-import { placeName } from '../src/app/data/us-state-name';
-import { Mode } from '../src/app/data/place';
+import { COUNTRY_LIST } from '../src/app/data/countries';
+import { Mode, Place } from '../src/app/data/place';
+import { US_STATE_LIST } from '../src/app/data/us-states';
+import { placeOf } from '../src/app/data/place-of';
 
 export type { Mode };
+export { placeOf };
 
-/** Nom français du pays (monde) ou de l'état (États-Unis), tel que le quiz l'affiche. */
-export function nameOf(code: string, mode: Mode = 'world'): string {
-  return placeName(mode, code);
+export function placeFor(code: string, mode: Mode = 'world'): Place {
+  return (mode === 'us' ? US_STATE_LIST : COUNTRY_LIST).find((place) => place.code === code)!;
 }
 
 /** Google n'est pas contacté pendant les tests : l'iframe reçoit une page vide. */
@@ -21,7 +23,7 @@ export async function openQuiz(page: Page, theme: 'light' | 'dark' = 'light'): P
     });
   }
   await page.goto('/');
-  await expect(page.locator('.app-option')).toHaveCount(4);
+  await expect(page.getByLabel('Ta réponse')).toBeEnabled();
 }
 
 /** Passe au jeu demandé avec le sélecteur de mode. */
@@ -32,7 +34,7 @@ export async function switchMode(page: Page, mode: Mode): Promise<void> {
     'aria-pressed',
     'true',
   );
-  await expect(page.locator('.app-option')).toHaveCount(4);
+  await expect(page.getByLabel('Ta réponse')).toBeEnabled();
 }
 
 /** Code et mode de la question affichée, lus dans l'URL de la photo (`places/<mode>/<code>.jpg`). */
@@ -46,12 +48,15 @@ export async function currentCode(page: Page): Promise<string> {
   return (await currentPlace(page)).code;
 }
 
+/** Tape une réponse et la valide avec le bouton. */
+export async function submitAnswer(page: Page, text: string): Promise<void> {
+  await page.getByLabel('Ta réponse').fill(text);
+  await page.getByRole('button', { name: 'Valider' }).click();
+}
+
+/** Répond juste (la capitale) ou faux, et renvoie le code de la question. */
 export async function answer(page: Page, correct: boolean): Promise<string> {
   const { code, mode } = await currentPlace(page);
-  const good = nameOf(code, mode);
-  const options = page.locator('.app-option');
-  const texts = await options.allInnerTexts();
-  const index = texts.findIndex((text) => (text.trim() === good) === correct);
-  await options.nth(index).click();
+  await submitAnswer(page, correct ? placeFor(code, mode).capital : 'Ville inconnue');
   return code;
 }

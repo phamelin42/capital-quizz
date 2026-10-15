@@ -1,7 +1,9 @@
+import { ANSWER_ALIASES, acceptedAnswers } from './answer-aliases';
 import articles from './photo-articles.json';
 import { COUNTRY_LIST } from './countries';
 import { countryName } from './country-name';
 import { Place } from './place';
+import { placeOf } from './place-of';
 import { usStateName } from './us-state-name';
 import { US_STATE_LIST } from './us-states';
 
@@ -87,5 +89,66 @@ describe('countryName', () => {
 
   it('accepte les majuscules', () => {
     expect(countryName('BR')).toBe('Brésil');
+  });
+});
+
+describe('placeOf', () => {
+  it('écrit la question avec l’article', () => {
+    expect(placeOf('world', 'hu')).toBe('de la Hongrie');
+    expect(placeOf('world', 'jp')).toBe('du Japon');
+    expect(placeOf('world', 'nl')).toBe('des Pays-Bas');
+    expect(placeOf('world', 'de')).toBe('de l’Allemagne');
+    expect(placeOf('world', 'il')).toBe('d’Israël');
+    expect(placeOf('us', 'tx')).toBe('du Texas');
+    expect(placeOf('us', 'ny')).toBe('de l’État de New York');
+  });
+
+  for (const { label, places, key } of lists) {
+    it(`a une forme avec « de » pour chaque entrée (${label})`, () => {
+      for (const { code } of places) {
+        expect(placeOf(key, code), code).toMatch(/^(de la |de l’|du |des |de |d’)\S/);
+      }
+    });
+
+    it(`ne répète aucune forme (${label})`, () => {
+      const forms = places.map(({ code }) => placeOf(key, code));
+      expect(new Set(forms).size).toBe(forms.length);
+    });
+  }
+
+  it('distingue la Géorgie du Caucase de l’état américain, et Washington D.C. de l’état', () => {
+    expect(placeOf('world', 'ge')).toBe('de la Géorgie');
+    expect(placeOf('us', 'ga')).toBe('de la Géorgie (États-Unis)');
+    expect(placeOf('us', 'wa')).toBe('de l’État de Washington');
+  });
+});
+
+describe('réponses acceptées', () => {
+  it('ne sont définies que pour des fiches qui existent', () => {
+    const known = new Set([
+      ...COUNTRY_LIST.map(({ code }) => `world/${code}`),
+      ...US_STATE_LIST.map(({ code }) => `us/${code}`),
+    ]);
+    expect(Object.keys(ANSWER_ALIASES).filter((key) => !known.has(key))).toEqual([]);
+  });
+
+  it('donnent la capitale en premier, puis les variantes', () => {
+    const bolivia = COUNTRY_LIST.find(({ code }) => code === 'bo')!;
+    expect(acceptedAnswers('world', bolivia)).toEqual(['La Paz', 'Sucre']);
+    const unknown = US_STATE_LIST.find(({ code }) => code === 'tx')!;
+    expect(acceptedAnswers('us', unknown)).toEqual(['Austin']);
+  });
+
+  it('acceptent toutes les villes qui se disputent le titre de capitale', () => {
+    const accepted = (code: string) =>
+      acceptedAnswers(
+        'world',
+        COUNTRY_LIST.find((p) => p.code === code)!,
+      );
+    expect(accepted('za')).toEqual(expect.arrayContaining(['Pretoria', 'Le Cap', 'Bloemfontein']));
+    expect(accepted('ci')).toEqual(expect.arrayContaining(['Yamoussoukro', 'Abidjan']));
+    expect(accepted('tz')).toEqual(expect.arrayContaining(['Dodoma', 'Dar es Salaam']));
+    expect(accepted('bj')).toEqual(expect.arrayContaining(['Porto-Novo', 'Cotonou']));
+    expect(accepted('ps')).toEqual(expect.arrayContaining(['Ramallah', 'Jérusalem']));
   });
 });

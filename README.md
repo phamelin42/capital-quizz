@@ -2,11 +2,13 @@
 
 Un quiz de capitales en Angular, construit avec le design system [Fuda](https://github.com/phamelin42/design-system-fuda). Site : <https://capitals-quizz.phamelin.fr>. Son jumeau, [Flag Quizz](https://flag-quizz.phamelin.fr), fait deviner les pays à partir de leur drapeau.
 
-- Le nom d'une capitale et la photo d'un lieu emblématique s'affichent (« Quel pays a pour capitale Budapest ? »), quatre pays sont proposés, un seul est le bon.
-- Un sélecteur **Monde / États-Unis** change de jeu : en mode États-Unis, on devine l'état à partir de sa capitale. Changer de mode remet le score à zéro.
-- Un clic valide ou non la réponse. Le score, la série en cours et le record s'affichent en haut.
+- Un pays s'affiche avec la photo d'un lieu emblématique de sa capitale (« Quelle est la capitale de la Hongrie ? ») : le joueur **tape le nom de la capitale**. Un bouton « Je ne sais pas » révèle la réponse.
+- Un sélecteur **Monde / États-Unis** change de jeu : en mode États-Unis, on donne la capitale d'un état. Changer de mode remet le score à zéro.
+- La réponse n'a pas à être exacte : la casse, les accents, les tirets et l'article sont ignorés, les noms anglais usuels sont acceptés, et une faute de frappe est pardonnée pour les noms de 7 lettres ou plus. Quand plusieurs villes se disputent le titre de capitale (La Paz et Sucre, Pretoria, Le Cap et Bloemfontein…), toutes sont acceptées.
+- Le score, la série en cours et le record s'affichent en haut.
 - Une fois la réponse donnée apparaissent **une anecdote** sur la capitale (en bas à gauche) et **la carte Google Maps** (en bas à droite), ainsi que le nom du monument photographié. Avant, aucun de ces éléments n'est affiché.
 - Les 195 pays (193 membres de l'ONU, le Vatican et la Palestine) et les 50 états sont tirés dans un ordre mélangé, sans répétition jusqu'à épuisement, puis le paquet est refait.
+- La photo montre la capitale, mais son nom, celui du monument, l'anecdote et la carte n'apparaissent qu'après la réponse.
 - Thème Jour par défaut, thème Nuit au choix du joueur. Clavier complet, WCAG 2.2 AA vérifié par axe.
 
 ## Démarrer
@@ -57,7 +59,7 @@ La carte est une iframe `https://www.google.com/maps?q=<capitale>, <pays ou éta
 
 ## Ajouter ou corriger une capitale
 
-Les fiches sont dans `src/app/data/` : un fichier par continent, plus `us-states.ts`. Chacune a un code (ISO en minuscules, ou abréviation postale pour les états), la capitale, le nom du monument et une anecdote. Le nom du pays vient de `Intl.DisplayNames` (surcharges dans `country-name.ts`), celui de l'état de `us-state-name.ts`. `places.spec.ts` et `photos.spec.ts` vérifient que chaque fiche a une capitale, un monument, une anecdote, un article de photo et un crédit.
+Les fiches sont dans `src/app/data/` : un fichier par continent, plus `us-states.ts`. Chacune a un code (ISO en minuscules, ou abréviation postale pour les états), la capitale, le nom du monument et une anecdote. Le nom du pays vient de `Intl.DisplayNames` (surcharges dans `country-name.ts`), celui de l'état de `us-state-name.ts`. La question utilise `place-of.ts` (« de la Hongrie », « du Texas »…, écrit à la main avec l'article) ; les autres réponses acceptées (noms anglais, villes partagées) sont dans `answer-aliases.ts`. `places.spec.ts` et `photos.spec.ts` vérifient que chaque fiche a une capitale, un monument, une anecdote, un article de photo et un crédit.
 
 Quelques capitales sont ambiguës : on retient la plus citée et l'anecdote le dit (La Paz et Sucre en Bolivie, Pretoria / Le Cap / Bloemfontein en Afrique du Sud, Amsterdam / La Haye, Yamoussoukro / Abidjan, Dodoma / Dar es Salaam, Porto-Novo / Cotonou, Colombo / Sri Jayawardenepura Kotte, Jérusalem pour Israël, Ramallah pour la Palestine).
 

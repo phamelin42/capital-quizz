@@ -1,0 +1,35 @@
+.app-answer-form {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+.app-form {
+  display: grid;
+  gap: var(--space-4);
+}
+.app-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.app-status {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+  font-family: var(--font-text);
+  color: var(--ink);
+}
+.app-status:empty {
+  display: none;
+}
+.app-status--correct {
+  color: var(--tokiwa);
+}
+.app-status--wrong {
+  color: var(--sakura-deep);
+}
+.app-status svg {
+  flex: none;
+  margin-top: var(--space-1);
+}

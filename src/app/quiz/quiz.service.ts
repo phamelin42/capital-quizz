@@ -1,7 +1,9 @@
 import { computed, inject, Injectable, InjectionToken, signal } from '@angular/core';
+import { acceptedAnswers } from '../data/answer-aliases';
 import { COUNTRY_LIST } from '../data/countries';
 import { Mode, Place } from '../data/place';
 import { US_STATE_LIST } from '../data/us-states';
+import { matchesAnswer } from './answer-match';
 
 /** Les pays tirés par le quiz en mode monde. Remplaçable dans les tests. */
 export const COUNTRIES = new InjectionToken<readonly Place[]>('COUNTRIES', {
@@ -21,18 +23,15 @@ export const RANDOM = new InjectionToken<() => number>('RANDOM', {
   factory: () => Math.random,
 });
 
-const OPTION_COUNT = 4;
-
 export interface Question {
-  /** La capitale posée ; son `code` désigne le pays ou l'état à trouver. */
+  /** Le pays ou l'état posé : son `capital` est la réponse attendue (la photo montre cette capitale). */
   readonly place: Place;
-  /** Les 4 propositions, dans l'ordre d'affichage ; la bonne s'y trouve une seule fois. */
-  readonly options: readonly Place[];
 }
 
 /**
- * Déroulé d'une partie sans fin : chaque capitale est posée une fois par paquet, dans un ordre mélangé,
- * puis le paquet est refait. Une question se répond une seule fois. Changer de mode repart de zéro.
+ * Déroulé d'une partie sans fin : chaque pays (ou état) est posé une fois par paquet, dans un ordre mélangé,
+ * puis le paquet est refait. Le joueur tape le nom de la capitale ; une question se répond une seule fois.
+ * Changer de mode repart de zéro.
  */
 @Injectable({ providedIn: 'root' })
 export class QuizService {
@@ -47,32 +46,36 @@ export class QuizService {
 
   readonly mode = signal<Mode>('world');
   readonly question = signal<Question>(this.draw());
-  /** Code choisi par le joueur, `null` tant qu'il n'a pas répondu. */
+  /** Texte envoyé par le joueur (vide s'il a passé), `null` tant qu'il n'a pas répondu. */
   readonly answer = signal<string | null>(null);
   readonly score = signal(0);
   readonly streak = signal(0);
   readonly bestStreak = signal(0);
-  /** Nombre de questions répondues. */
+  /** Nombre de questions répondues (ou passées). */
   readonly asked = signal(0);
 
   readonly isAnswered = computed(() => this.answer() !== null);
-  readonly isCorrect = computed(() => this.answer() === this.question().place.code);
+  /** Le joueur a passé la question avec « Je ne sais pas ». */
+  readonly skipped = computed(() => this.answer() === '');
+  readonly isCorrect = computed(() => {
+    const answer = this.answer();
+    return answer !== null && matchesAnswer(answer, this.accepted());
+  });
+  /** Les réponses acceptées pour la question courante, la capitale en tête. */
+  readonly accepted = computed(() => acceptedAnswers(this.mode(), this.question().place));
 
-  /** Valide un choix. Sans effet si la question est déjà répondue ou si le code n'est pas proposé. */
-  choose(code: string): void {
+  /** Valide une réponse. Sans effet si la question est déjà répondue ou si la saisie est vide. */
+  submit(text: string): void {
     if (this.isAnswered()) return;
-    const { place, options } = this.question();
-    if (!options.some((option) => option.code === code)) return;
+    const answer = text.trim();
+    if (!answer) return;
+    this.record(answer);
+  }
 
-    this.answer.set(code);
-    this.asked.update((n) => n + 1);
-    if (code === place.code) {
-      this.score.update((n) => n + 1);
-      this.streak.update((n) => n + 1);
-      this.bestStreak.update((best) => Math.max(best, this.streak()));
-    } else {
-      this.streak.set(0);
-    }
+  /** « Je ne sais pas » : révèle la réponse et compte comme une erreur. Sans effet si la question est répondue. */
+  giveUp(): void {
+    if (this.isAnswered()) return;
+    this.record('');
   }
 
   /** Passe à la question suivante. Sans effet tant que la question courante n'est pas répondue. */
@@ -85,7 +88,7 @@ export class QuizService {
   /** Change de mode et repart de zéro : score, séries, paquet et question. Sans effet si le mode est déjà actif. */
   setMode(mode: Mode): void {
     if (mode === this.mode()) return;
-    this.assertEnough(mode);
+    this.assertNotEmpty(mode);
     this.mode.set(mode);
     this.deck = [];
     this.lastCode = null;
@@ -97,29 +100,34 @@ export class QuizService {
     this.question.set(this.draw());
   }
 
-  private assertEnough(mode: Mode): void {
-    const count = this.lists[mode].length;
-    if (count < OPTION_COUNT) {
-      throw new Error(`Il faut au moins ${OPTION_COUNT} entrées, ${count} fournies.`);
+  private record(answer: string): void {
+    this.answer.set(answer);
+    this.asked.update((n) => n + 1);
+    if (this.isCorrect()) {
+      this.score.update((n) => n + 1);
+      this.streak.update((n) => n + 1);
+      this.bestStreak.update((best) => Math.max(best, this.streak()));
+    } else {
+      this.streak.set(0);
     }
   }
 
+  private assertNotEmpty(mode: Mode): void {
+    if (this.lists[mode].length === 0) throw new Error('Il faut au moins une entrée.');
+  }
+
   private draw(): Question {
-    this.assertEnough(this.mode());
-    const places = this.lists[this.mode()];
+    this.assertNotEmpty(this.mode());
     if (this.deck.length === 0) {
-      this.deck = this.shuffled(places);
-      // Début de paquet : on évite de reposer tout de suite la capitale qui vient d'être vue.
-      if (this.deck[this.deck.length - 1].code === this.lastCode) {
+      this.deck = this.shuffled(this.lists[this.mode()]);
+      // Début de paquet : on évite de reposer tout de suite la question qui vient d'être vue.
+      if (this.deck.length > 1 && this.deck[this.deck.length - 1].code === this.lastCode) {
         this.deck.unshift(this.deck.pop()!);
       }
     }
     const place = this.deck.pop()!;
     this.lastCode = place.code;
-
-    const others = this.shuffled(places.filter((p) => p.code !== place.code));
-    const options = this.shuffled([place, ...others.slice(0, OPTION_COUNT - 1)]);
-    return { place, options };
+    return { place };
   }
 
   /** Mélange de Fisher-Yates sur une copie. */

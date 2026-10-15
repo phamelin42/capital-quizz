@@ -8,6 +8,18 @@ Un quiz de capitales, jumeau de [flag-quizz](https://github.com/phamelin42/flag-
 
 Réussite : le jeu se joue en entier au clavier, dans les deux modes, sans qu'aucun élément n'annonce la réponse avant le clic ; `lint`, `typecheck`, `test`, `build` et `e2e` sont verts ; chaque photo est sous licence libre et créditée.
 
+## Révision : le joueur tape la capitale (2026-10-15, validée avant l'implémentation)
+
+Cette section remplace ce qui suit sur le déroulé d'une question (propositions à 4 choix, question « Quel pays a pour capitale X ? »).
+
+- **Question** : « Quelle est la capitale de la Hongrie ? » (« … de l'Alabama ? » en mode États-Unis), au-dessus de la photo d'un lieu emblématique de la capitale. Le complément est écrit à la main, avec l'article (`place-of.ts`).
+- **Réponse** : un champ texte, un bouton « Valider » (ou Entrée) et un bouton « Je ne sais pas » qui révèle la réponse et compte comme une erreur. Plus de propositions.
+- **Comparaison** : on ne compare pas strictement. On ignore la casse, les accents, les tirets, les espaces, les apostrophes et l'article initial (« Havane » pour « La Havane »), on développe « St » en « Saint », et on pardonne **une faute de frappe** pour les noms de 7 lettres ou plus (insertion, oubli, remplacement ou échange de deux lettres voisines). Sous 7 lettres, seule la saisie exacte (aux accents et à la casse près) passe.
+- **Variantes** (`answer-aliases.ts`) : noms anglais et orthographes courantes (Kyiv, Pékin / Beijing, Washington…), et toutes les villes qui se disputent le titre de capitale (La Paz ou Sucre ; Pretoria, Le Cap ou Bloemfontein ; Yamoussoukro ou Abidjan ; Dodoma ou Dar es Salaam ; Porto-Novo ou Cotonou ; Gitega ou Bujumbura ; Mbabane ou Lobamba ; Colombo ou Kotte ; Ramallah ou Jérusalem pour la Palestine).
+- **Verdict** : une ligne avec icône et texte, annoncée (`aria-live`), jamais la couleur seule : « ✓ Bonne réponse : Budapest. » ou « ✗ Mauvaise réponse. La bonne réponse était : Budapest. » (« Tu as passé. » après « Je ne sais pas »). Le champ se verrouille.
+- **Secret avant la réponse** : la photo montre la capitale (c'est voulu), mais ni son nom, ni celui du monument, ni l'anecdote, ni la carte n'apparaissent avant la réponse ; le texte alternatif de la photo est « Photo de la capitale ».
+- **Focus** : après la réponse, sur « Capitale suivante » ; après « suivant » ou un changement de mode, dans le champ.
+
 ## Ce qui ne change pas par rapport à flag-quizz
 
 Tout le CLAUDE.md de flag-quizz s'applique (il est repris tel quel, adapté au sujet) : composants standalone OnPush, signaux, Fuda uniquement par tokens, thèmes Jour/Nuit, favicon obligatoire, bouton `success` / `danger` avec coche / croix, focus après réponse sur « suivant » puis sur la première proposition, une seule réponse par question, carte et anecdote absentes du DOM avant la réponse, noms sans article.

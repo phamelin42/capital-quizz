@@ -1,11 +1,12 @@
 import { Component, computed, input, ViewEncapsulation } from '@angular/core';
 import { FdCard } from 'fuda';
 import { Mode, Place } from '../data/place';
+import { placeOf } from '../data/place-of';
 import { photoSrc } from './photo-src';
 
 /**
- * La capitale à deviner et la photo d'un lieu emblématique. Tant que la question n'est pas répondue,
- * ni le texte alternatif de la photo ni la question ne donnent le nom du pays ou de l'état.
+ * La question (« Quelle est la capitale de la Hongrie ? ») et la photo d'un lieu emblématique de la capitale.
+ * Tant que la question n'est pas répondue, le texte alternatif de la photo ne nomme ni la capitale ni le monument.
  */
 @Component({
   selector: 'app-place-card',
@@ -20,11 +21,11 @@ export class PlaceCard {
   readonly mode = input<Mode>('world');
   readonly revealed = input(false);
 
-  protected readonly question = computed(() =>
-    this.mode() === 'us' ? 'Quel état a pour capitale' : 'Quel pays a pour capitale',
+  protected readonly question = computed(
+    () => `Quelle est la capitale ${placeOf(this.mode(), this.place().code)} ?`,
   );
   protected readonly src = computed(() => photoSrc(this.mode(), this.place().code));
   protected readonly alt = computed(() =>
-    this.revealed() ? `${this.place().landmark}, ${this.place().capital}` : 'Lieu à deviner',
+    this.revealed() ? `${this.place().landmark}, ${this.place().capital}` : 'Photo de la capitale',
   );
 }
