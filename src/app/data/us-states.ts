@@ -292,7 +292,7 @@ export const US_STATE_LIST: readonly Place[] = [
   {
     code: 'tn',
     capital: 'Nashville',
-    landmark: 'Grand Ole Opry',
+    landmark: 'Ryman Auditorium',
     funFact:
       'On l’appelle « Music City » : c’est la capitale de la musique country. Le Grand Ole Opry y diffuse un concert à la radio depuis 1925.',
   },

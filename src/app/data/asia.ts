@@ -172,7 +172,7 @@ export const ASIA: readonly Place[] = [
   {
     code: 'mv',
     capital: 'Malé',
-    landmark: 'Grande Mosquée du Vendredi de Malé',
+    landmark: 'Hukuru Miskiy',
     funFact:
       'La ville couvre toute une petite île d’environ 8 km² : c’est l’une des capitales les plus densément peuplées du monde.',
   },
@@ -333,7 +333,7 @@ export const ASIA: readonly Place[] = [
   {
     code: 'ps',
     capital: 'Ramallah',
-    landmark: 'Place Al-Manara',
+    landmark: 'Mausolée de Yasser Arafat',
     funFact:
       'Ramallah est le siège de l’Autorité palestinienne. L’État de Palestine proclame Jérusalem-Est pour capitale.',
   },

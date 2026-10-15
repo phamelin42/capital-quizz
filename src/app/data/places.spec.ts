@@ -44,7 +44,8 @@ for (const { label, places, size, key } of lists) {
       expect(Object.keys(articles[key]).sort()).toEqual(codes);
       for (const [code, article] of Object.entries(articles[key])) {
         expect(article.trim(), code).not.toBe('');
-        expect(article, code).not.toContain(' ');
+        if (!/^(search(-en)?|commons|file):/.test(article))
+          expect(article, code).not.toContain(' ');
       }
     });
   });

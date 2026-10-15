@@ -186,7 +186,7 @@ export const EUROPE: readonly Place[] = [
   {
     code: 'me',
     capital: 'Podgorica',
-    landmark: 'Cathédrale de la Résurrection de Podgorica',
+    landmark: 'Pont du Millénaire',
     funFact: 'De 1946 à 1992, la ville s’est appelée Titograd, en l’honneur du maréchal Tito.',
   },
   {

@@ -25,7 +25,7 @@ export const AMERICAS: readonly Place[] = [
   {
     code: 'bb',
     capital: 'Bridgetown',
-    landmark: 'Bridgetown et sa garnison',
+    landmark: 'Parlement de la Barbade',
     funFact:
       'Le centre historique de Bridgetown et sa garnison militaire sont classés à l’Unesco depuis 2011.',
   },
